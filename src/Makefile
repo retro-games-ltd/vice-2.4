@@ -320,7 +320,7 @@ AMTAR = $${TAR-tar}
 AR = ar
 ARCH_DIR = $(top_builddir)/src/arch/unix
 ARCH_EXTRA_SUBDIR = gui x11
-ARCH_INCLUDES = -I/home/chris/src/the64-hardware/firmware/src -I$(top_srcdir)/src/arch/unix
+ARCH_INCLUDES = -I/home/chris/src/the64-hardware/firmware/src -I$(top_builddir)/src/arch/unix
 ARCH_LIBS = $(top_builddir)/src/arch/unix/libarch.a $(top_builddir)/src/arch/unix/gui/libarchgui.a $(top_builddir)/src/arch/unix/x11/libx11ui.a $(top_builddir)/src/arch/unix/x11/xaw/libxawui.a $(top_builddir)/src/arch/unix/x11/xaw/widgets/libwidgets.a $(top_builddir)/src/arch/unix/libarch.a $(top_builddir)/src/arch/unix/gui/libarchgui.a $(top_builddir)/src/arch/unix/x11/libx11ui.a
 ARCH_MAKE_BINDIST_DIR = 
 ARCH_SRC_DIR = $(top_srcdir)/src/arch/unix
@@ -650,6 +650,7 @@ DIST_SUBDIRS = \
 
 INCLUDES = \
 	-I/home/chris/src/the64-hardware/firmware/src \
+	-I$(top_srcdir)/src/arch/unix \
 	-I$(top_builddir)/src \
 	-I$(top_srcdir)/src \
 	-I$(top_srcdir)/src/arch/unix/readline \

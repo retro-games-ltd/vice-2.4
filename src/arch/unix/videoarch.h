@@ -1,5 +1,11 @@
 #include "vice.h"
 
+#error "Unix videoarch.h"
+
+#include "/home/chris/src/the64-hardware/firmware/src/videoarch.h" // CDS
+
+#if 0 // CDS
+
 #if defined(GP2X) || defined(WIZ)
 #include "gp2x/videoarch.h"
 #else
@@ -16,4 +22,6 @@
 #endif
 #endif
 #endif
+#endif
+
 #endif

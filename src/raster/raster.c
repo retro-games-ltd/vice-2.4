@@ -71,6 +71,8 @@ static int raster_draw_buffer_alloc(video_canvas_t *canvas,
 
     /* FIXME: Allocate one more line to prevent access violations by the
        scale2x render.  */
+printf( "INIT draw_buffer->draw_biffer to be %d bytes\n", fb_width *(fb_height + 1));
+
     canvas->draw_buffer->draw_buffer = lib_malloc(fb_width * (fb_height + 1));
     *fb_pitch = fb_width;
     return 0;
@@ -127,6 +129,8 @@ static int raster_realize_frame_buffer(raster_t *raster)
         raster->geometry->screen_size.height
       : raster->geometry->last_displayed_line + 1; /* allocate extra space for the */
               /* lower part of the visible lower border (lines 0+) on NTSC VIC-II */
+
+printf( "fb_width = %d  fb_height = %d\n", fb_width, fb_height);
 
     if (fb_width > 0 && fb_height > 0) {
         if (raster_draw_buffer_alloc(raster->canvas, fb_width, fb_height,

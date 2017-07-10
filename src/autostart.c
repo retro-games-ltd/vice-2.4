@@ -557,6 +557,7 @@ void autostart_reinit(CLOCK _min_cycles, int _handle_drive_true_emulation,
     lnmx = _lnmx;
 
     min_cycles = _min_cycles;
+printf( "Setting min_cycles to %d\n", _min_cycles);
 
     handle_drive_true_emulation_by_machine = _handle_drive_true_emulation;
 
@@ -985,10 +986,13 @@ static void reboot_for_autostart(const char *program_name, unsigned int mode,
     }
 
     autostart_initial_delay_cycles = min_cycles;
+printf("1 autostart_initial_delay_cycles: %d\n", autostart_initial_delay_cycles);
     resources_get_int("AutostartDelayRandom", &rnd);
     if (rnd) {
+printf( "RAND!\n");
         autostart_initial_delay_cycles += AUTOSTART_RAND();
     }
+printf("2 autostart_initial_delay_cycles: %d\n", autostart_initial_delay_cycles);
     DBG(("autostart_initial_delay_cycles: %d", autostart_initial_delay_cycles));
 
     machine_trigger_reset(MACHINE_RESET_MODE_SOFT);

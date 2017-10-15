@@ -267,7 +267,9 @@ static key_ctrl_column4080_func_t key_ctrl_column4080_func = NULL;
 static signed long key_ctrl_caps = -1;
 static key_ctrl_caps_func_t key_ctrl_caps_func = NULL;
 
-/* Is an alternative mapping active? */
+/* Special key to swap to alt set and Is an alternative mapping active? */
+static signed long key_ctrl_alt1 = -1;
+static signed long key_ctrl_alt2 = -1;
 static int key_alternative = 0;
 
 static keyboard_conv_t *keyconvmap = NULL;
@@ -417,6 +419,12 @@ void keyboard_key_pressed(signed long key)
         keyboard_restore_pressed();
         return;
     }
+    /* Alt */
+    if (((key == key_ctrl_alt1) || (key == key_ctrl_alt2)) && !key_alternative)
+    {
+        keyboard_alternative_set(1);
+        return;
+    }
 
     if (key == key_ctrl_column4080) {
         if (key_ctrl_column4080_func != NULL)
@@ -544,6 +552,12 @@ void keyboard_key_released(signed long key)
     if (((key == key_ctrl_restore1) || (key == key_ctrl_restore2))
         && machine_has_restore_key()) {
         keyboard_restore_released();
+        return;
+    }
+    /* Alt */
+    if (((key == key_ctrl_alt1) || (key == key_ctrl_alt2)) && !key_alternative)
+    {
+        keyboard_alternative_set(0);
         return;
     }
 
@@ -851,6 +865,12 @@ static int keyboard_parse_set_neg_row(signed long sym, int row, int col)
     } else
     if (row == -4 && col == 1) {
         key_ctrl_caps = sym;
+    } else
+    if (row == -6 && col == 0) { // Left Alt
+        key_ctrl_alt1 = sym;
+    } else 
+    if (row == -6 && col == 1) { // Right Alt
+        key_ctrl_alt2 = sym;
     } else {
         return -1;
     }
@@ -1032,6 +1052,8 @@ int keyboard_keymap_dump(const char *filename)
             "# 'keysym -3 1' second RESTORE key\n"
             "# 'keysym -4 0' 40/80 column key\n"
             "# 'keysym -4 1' CAPS (ASCII/DIN) key\n"
+            "# 'keysym -6 0' Left ALT key\n"
+            "# 'keysym -6 1' Right ALT key\n"
             "#\n\n"
         );
     fprintf(fp, "!CLEAR\n");
@@ -1085,6 +1107,20 @@ int keyboard_keymap_dump(const char *filename)
                 "#\n");
         fprintf(fp, "%s -4 1\n",
                 kbd_arch_keynum_to_keyname(key_ctrl_restore1));
+        fprintf(fp, "\n");
+    }
+    if (key_ctrl_alt1 != -1 || key_ctrl_alt2 != -1) {
+        fprintf(fp, "#\n"
+                "# Alt key mappings\n"
+                "#\n");
+        if (key_ctrl_alt1 != -1) {
+            fprintf(fp, "%s -6 0\n",
+                    kbd_arch_keynum_to_keyname(key_ctrl_alt1));
+        }
+        if (key_ctrl_alt2 != -1) {
+            fprintf(fp, "%s -6 1\n",
+                    kbd_arch_keynum_to_keyname(key_ctrl_alt2));
+        }
         fprintf(fp, "\n");
     }
 

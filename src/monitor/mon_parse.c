@@ -188,7 +188,7 @@ extern int cur_len, last_len;
 #define YYDEBUG 1
 
 
-#line 192 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:339  */
+#line 192 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:339  */
 
 # ifndef YY_NULLPTR
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -565,7 +565,7 @@ union YYSTYPE
     char *str;
     asm_mode_addr_info_t mode;
 
-#line 569 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:355  */
+#line 569 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:355  */
 };
 
 typedef union YYSTYPE YYSTYPE;
@@ -582,7 +582,7 @@ int yyparse (void);
 
 /* Copy the second part of user declarations.  */
 
-#line 586 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:358  */
+#line 586 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -2354,187 +2354,187 @@ yyreduce:
         case 2:
 #line 191 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = 0; }
-#line 2358 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2358 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 3:
 #line 192 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = 0; }
-#line 2364 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2364 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 4:
 #line 193 "mon_parse.y" /* yacc.c:1646  */
     { new_cmd = 1; asm_mode = 0;  (yyval.i) = 0; }
-#line 2370 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2370 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 9:
 #line 202 "mon_parse.y" /* yacc.c:1646  */
     { return ERR_EXPECT_END_CMD; }
-#line 2376 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2376 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 22:
 #line 217 "mon_parse.y" /* yacc.c:1646  */
     { return ERR_BAD_CMD; }
-#line 2382 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2382 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 23:
 #line 221 "mon_parse.y" /* yacc.c:1646  */
     { mon_bank(e_default_space, NULL); }
-#line 2388 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2388 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 24:
 #line 223 "mon_parse.y" /* yacc.c:1646  */
     { mon_bank((yyvsp[-1].i), NULL); }
-#line 2394 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2394 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 25:
 #line 225 "mon_parse.y" /* yacc.c:1646  */
     { mon_bank(e_default_space, (yyvsp[-1].str)); }
-#line 2400 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2400 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 26:
 #line 227 "mon_parse.y" /* yacc.c:1646  */
     { mon_bank((yyvsp[-3].i), (yyvsp[-1].str)); }
-#line 2406 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2406 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 27:
 #line 229 "mon_parse.y" /* yacc.c:1646  */
     { mon_jump((yyvsp[-1].a)); }
-#line 2412 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2412 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 28:
 #line 231 "mon_parse.y" /* yacc.c:1646  */
     { mon_go(); }
-#line 2418 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2418 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 29:
 #line 233 "mon_parse.y" /* yacc.c:1646  */
     { mon_display_io_regs(0); }
-#line 2424 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2424 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 30:
 #line 235 "mon_parse.y" /* yacc.c:1646  */
     { mon_display_io_regs((yyvsp[-1].a)); }
-#line 2430 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2430 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 31:
 #line 237 "mon_parse.y" /* yacc.c:1646  */
     { monitor_cpu_type_set(""); }
-#line 2436 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2436 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 32:
 #line 239 "mon_parse.y" /* yacc.c:1646  */
     { monitor_cpu_type_set((yyvsp[-1].str)); }
-#line 2442 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2442 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 33:
 #line 241 "mon_parse.y" /* yacc.c:1646  */
     { mon_cpuhistory(-1); }
-#line 2448 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2448 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 34:
 #line 243 "mon_parse.y" /* yacc.c:1646  */
     { mon_cpuhistory((yyvsp[-1].i)); }
-#line 2454 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2454 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 35:
 #line 245 "mon_parse.y" /* yacc.c:1646  */
     { mon_instruction_return(); }
-#line 2460 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2460 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 36:
 #line 247 "mon_parse.y" /* yacc.c:1646  */
     { machine_write_snapshot((yyvsp[-1].str),0,0,0); /* FIXME */ }
-#line 2466 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2466 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 37:
 #line 249 "mon_parse.y" /* yacc.c:1646  */
     { machine_read_snapshot((yyvsp[-1].str), 0); }
-#line 2472 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2472 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 38:
 #line 251 "mon_parse.y" /* yacc.c:1646  */
     { mon_instructions_step(-1); }
-#line 2478 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2478 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 39:
 #line 253 "mon_parse.y" /* yacc.c:1646  */
     { mon_instructions_step((yyvsp[-1].i)); }
-#line 2484 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2484 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 40:
 #line 255 "mon_parse.y" /* yacc.c:1646  */
     { mon_instructions_next(-1); }
-#line 2490 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2490 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 41:
 #line 257 "mon_parse.y" /* yacc.c:1646  */
     { mon_instructions_next((yyvsp[-1].i)); }
-#line 2496 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2496 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 42:
 #line 259 "mon_parse.y" /* yacc.c:1646  */
     { mon_stack_up(-1); }
-#line 2502 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2502 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 43:
 #line 261 "mon_parse.y" /* yacc.c:1646  */
     { mon_stack_up((yyvsp[-1].i)); }
-#line 2508 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2508 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 44:
 #line 263 "mon_parse.y" /* yacc.c:1646  */
     { mon_stack_down(-1); }
-#line 2514 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2514 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 45:
 #line 265 "mon_parse.y" /* yacc.c:1646  */
     { mon_stack_down((yyvsp[-1].i)); }
-#line 2520 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2520 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 46:
 #line 267 "mon_parse.y" /* yacc.c:1646  */
     { mon_display_screen(); }
-#line 2526 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2526 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 48:
 #line 272 "mon_parse.y" /* yacc.c:1646  */
     { (monitor_cpu_for_memspace[default_memspace]->mon_register_print)(default_memspace); }
-#line 2532 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2532 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 49:
 #line 274 "mon_parse.y" /* yacc.c:1646  */
     { (monitor_cpu_for_memspace[(yyvsp[-1].i)]->mon_register_print)((yyvsp[-1].i)); }
-#line 2538 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2538 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 51:
@@ -2543,7 +2543,7 @@ yyreduce:
                         /* What about the memspace? */
                         mon_playback_init((yyvsp[-1].str));
                     }
-#line 2547 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2547 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 52:
@@ -2552,49 +2552,49 @@ yyreduce:
                         /* What about the memspace? */
                         mon_playback_init((yyvsp[-1].str));
                     }
-#line 2556 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2556 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 53:
 #line 289 "mon_parse.y" /* yacc.c:1646  */
     { mon_save_symbols((yyvsp[-3].i), (yyvsp[-1].str)); }
-#line 2562 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2562 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 54:
 #line 291 "mon_parse.y" /* yacc.c:1646  */
     { mon_save_symbols(e_default_space, (yyvsp[-1].str)); }
-#line 2568 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2568 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 55:
 #line 293 "mon_parse.y" /* yacc.c:1646  */
     { mon_add_name_to_symbol_table((yyvsp[-3].a), (yyvsp[-1].str)); }
-#line 2574 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2574 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 56:
 #line 295 "mon_parse.y" /* yacc.c:1646  */
     { mon_remove_name_from_symbol_table(e_default_space, (yyvsp[-1].str)); }
-#line 2580 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2580 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 57:
 #line 297 "mon_parse.y" /* yacc.c:1646  */
     { mon_remove_name_from_symbol_table((yyvsp[-3].i), (yyvsp[-1].str)); }
-#line 2586 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2586 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 58:
 #line 299 "mon_parse.y" /* yacc.c:1646  */
     { mon_print_symbol_table((yyvsp[-1].i)); }
-#line 2592 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2592 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 59:
 #line 301 "mon_parse.y" /* yacc.c:1646  */
     { mon_print_symbol_table(e_default_space); }
-#line 2598 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2598 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 60:
@@ -2602,7 +2602,7 @@ yyreduce:
     {
                         mon_add_name_to_symbol_table((yyvsp[-1].a), mon_prepend_dot_to_name((yyvsp[-3].str)));
                     }
-#line 2606 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2606 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 61:
@@ -2610,157 +2610,157 @@ yyreduce:
     {
                         mon_add_name_to_symbol_table((yyvsp[-2].a), mon_prepend_dot_to_name((yyvsp[-4].str)));
                     }
-#line 2614 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2614 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 62:
 #line 313 "mon_parse.y" /* yacc.c:1646  */
     { mon_start_assemble_mode((yyvsp[0].a), NULL); }
-#line 2620 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2620 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 63:
 #line 314 "mon_parse.y" /* yacc.c:1646  */
     { }
-#line 2626 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2626 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 64:
 #line 316 "mon_parse.y" /* yacc.c:1646  */
     { mon_start_assemble_mode((yyvsp[-1].a), NULL); }
-#line 2632 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2632 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 65:
 #line 318 "mon_parse.y" /* yacc.c:1646  */
     { mon_disassemble_lines((yyvsp[-1].range)[0], (yyvsp[-1].range)[1]); }
-#line 2638 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2638 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 66:
 #line 320 "mon_parse.y" /* yacc.c:1646  */
     { mon_disassemble_lines(BAD_ADDR, BAD_ADDR); }
-#line 2644 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2644 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 67:
 #line 324 "mon_parse.y" /* yacc.c:1646  */
     { mon_memory_move((yyvsp[-3].range)[0], (yyvsp[-3].range)[1], (yyvsp[-1].a)); }
-#line 2650 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2650 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 68:
 #line 326 "mon_parse.y" /* yacc.c:1646  */
     { mon_memory_compare((yyvsp[-3].range)[0], (yyvsp[-3].range)[1], (yyvsp[-1].a)); }
-#line 2656 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2656 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 69:
 #line 328 "mon_parse.y" /* yacc.c:1646  */
     { mon_memory_fill((yyvsp[-3].range)[0], (yyvsp[-3].range)[1],(unsigned char *)(yyvsp[-1].str)); }
-#line 2662 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2662 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 70:
 #line 330 "mon_parse.y" /* yacc.c:1646  */
     { mon_memory_hunt((yyvsp[-3].range)[0], (yyvsp[-3].range)[1],(unsigned char *)(yyvsp[-1].str)); }
-#line 2668 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2668 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 71:
 #line 332 "mon_parse.y" /* yacc.c:1646  */
     { mon_memory_display((yyvsp[-3].rt), (yyvsp[-1].range)[0], (yyvsp[-1].range)[1], DF_PETSCII); }
-#line 2674 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2674 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 72:
 #line 334 "mon_parse.y" /* yacc.c:1646  */
     { mon_memory_display(default_radix, (yyvsp[-1].range)[0], (yyvsp[-1].range)[1], DF_PETSCII); }
-#line 2680 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2680 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 73:
 #line 336 "mon_parse.y" /* yacc.c:1646  */
     { mon_memory_display(default_radix, BAD_ADDR, BAD_ADDR, DF_PETSCII); }
-#line 2686 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2686 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 74:
 #line 338 "mon_parse.y" /* yacc.c:1646  */
     { mon_memory_display_data((yyvsp[-1].range)[0], (yyvsp[-1].range)[1], 8, 8); }
-#line 2692 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2692 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 75:
 #line 340 "mon_parse.y" /* yacc.c:1646  */
     { mon_memory_display_data(BAD_ADDR, BAD_ADDR, 8, 8); }
-#line 2698 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2698 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 76:
 #line 342 "mon_parse.y" /* yacc.c:1646  */
     { mon_memory_display_data((yyvsp[-1].range)[0], (yyvsp[-1].range)[1], 24, 21); }
-#line 2704 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2704 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 77:
 #line 344 "mon_parse.y" /* yacc.c:1646  */
     { mon_memory_display_data(BAD_ADDR, BAD_ADDR, 24, 21); }
-#line 2710 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2710 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 78:
 #line 346 "mon_parse.y" /* yacc.c:1646  */
     { mon_memory_display(0, (yyvsp[-1].range)[0], (yyvsp[-1].range)[1], DF_PETSCII); }
-#line 2716 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2716 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 79:
 #line 348 "mon_parse.y" /* yacc.c:1646  */
     { mon_memory_display(0, BAD_ADDR, BAD_ADDR, DF_PETSCII); }
-#line 2722 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2722 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 80:
 #line 350 "mon_parse.y" /* yacc.c:1646  */
     { mon_memory_display(0, (yyvsp[-1].range)[0], (yyvsp[-1].range)[1], DF_SCREEN_CODE); }
-#line 2728 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2728 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 81:
 #line 352 "mon_parse.y" /* yacc.c:1646  */
     { mon_memory_display(0, BAD_ADDR, BAD_ADDR, DF_SCREEN_CODE); }
-#line 2734 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2734 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 82:
 #line 354 "mon_parse.y" /* yacc.c:1646  */
     { mon_memmap_zap(); }
-#line 2740 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2740 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 83:
 #line 356 "mon_parse.y" /* yacc.c:1646  */
     { mon_memmap_show(-1,BAD_ADDR,BAD_ADDR); }
-#line 2746 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2746 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 84:
 #line 358 "mon_parse.y" /* yacc.c:1646  */
     { mon_memmap_show((yyvsp[-1].i),BAD_ADDR,BAD_ADDR); }
-#line 2752 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2752 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 85:
 #line 360 "mon_parse.y" /* yacc.c:1646  */
     { mon_memmap_show((yyvsp[-2].i),(yyvsp[-1].range)[0],(yyvsp[-1].range)[1]); }
-#line 2758 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2758 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 86:
 #line 362 "mon_parse.y" /* yacc.c:1646  */
     { mon_memmap_save((yyvsp[-3].str),(yyvsp[-1].i)); }
-#line 2764 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2764 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 87:
@@ -2773,13 +2773,13 @@ yyreduce:
                       }
                       mon_breakpoint_set_checkpoint_condition(temp, (yyvsp[-1].cond_node));
                   }
-#line 2777 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2777 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 88:
 #line 375 "mon_parse.y" /* yacc.c:1646  */
     { mon_breakpoint_print_checkpoints(); }
-#line 2783 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2783 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 89:
@@ -2787,13 +2787,13 @@ yyreduce:
     {
                       mon_breakpoint_add_checkpoint((yyvsp[-1].range)[0], (yyvsp[-1].range)[1], TRUE, e_exec, TRUE);
                   }
-#line 2791 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2791 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 90:
 #line 382 "mon_parse.y" /* yacc.c:1646  */
     { mon_breakpoint_print_checkpoints(); }
-#line 2797 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2797 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 91:
@@ -2806,13 +2806,13 @@ yyreduce:
                       }
                       mon_breakpoint_set_checkpoint_condition(temp, (yyvsp[-1].cond_node));
                   }
-#line 2810 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2810 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 92:
 #line 394 "mon_parse.y" /* yacc.c:1646  */
     { mon_breakpoint_print_checkpoints(); }
-#line 2816 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2816 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 93:
@@ -2825,73 +2825,73 @@ yyreduce:
                       }
                       mon_breakpoint_set_checkpoint_condition(temp, (yyvsp[-1].cond_node));
                   }
-#line 2829 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2829 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 94:
 #line 406 "mon_parse.y" /* yacc.c:1646  */
     { mon_breakpoint_print_checkpoints(); }
-#line 2835 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2835 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 95:
 #line 411 "mon_parse.y" /* yacc.c:1646  */
     { mon_breakpoint_switch_checkpoint(e_ON, (yyvsp[-1].i)); }
-#line 2841 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2841 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 96:
 #line 413 "mon_parse.y" /* yacc.c:1646  */
     { mon_breakpoint_switch_checkpoint(e_OFF, (yyvsp[-1].i)); }
-#line 2847 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2847 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 97:
 #line 415 "mon_parse.y" /* yacc.c:1646  */
     { mon_breakpoint_set_ignore_count((yyvsp[-1].i), -1); }
-#line 2853 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2853 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 98:
 #line 417 "mon_parse.y" /* yacc.c:1646  */
     { mon_breakpoint_set_ignore_count((yyvsp[-3].i), (yyvsp[-1].i)); }
-#line 2859 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2859 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 99:
 #line 419 "mon_parse.y" /* yacc.c:1646  */
     { mon_breakpoint_delete_checkpoint((yyvsp[-1].i)); }
-#line 2865 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2865 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 100:
 #line 421 "mon_parse.y" /* yacc.c:1646  */
     { mon_breakpoint_delete_checkpoint(-1); }
-#line 2871 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2871 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 101:
 #line 423 "mon_parse.y" /* yacc.c:1646  */
     { mon_breakpoint_set_checkpoint_condition((yyvsp[-3].i), (yyvsp[-1].cond_node)); }
-#line 2877 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2877 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 102:
 #line 425 "mon_parse.y" /* yacc.c:1646  */
     { mon_breakpoint_set_checkpoint_command((yyvsp[-3].i), (yyvsp[-1].str)); }
-#line 2883 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2883 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 103:
 #line 427 "mon_parse.y" /* yacc.c:1646  */
     { return ERR_EXPECT_STRING; }
-#line 2889 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2889 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 104:
 #line 431 "mon_parse.y" /* yacc.c:1646  */
     { sidefx = (((yyvsp[-1].action) == e_TOGGLE) ? (sidefx ^ 1) : (yyvsp[-1].action)); }
-#line 2895 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2895 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 105:
@@ -2900,13 +2900,13 @@ yyreduce:
                          mon_out("I/O side effects are %s\n",
                                    sidefx ? "enabled" : "disabled");
                      }
-#line 2904 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2904 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 106:
 #line 438 "mon_parse.y" /* yacc.c:1646  */
     { default_radix = (yyvsp[-1].rt); }
-#line 2910 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2910 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 107:
@@ -2927,445 +2927,445 @@ yyreduce:
 
                          mon_out("Default radix is %s\n", p);
                      }
-#line 2931 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2931 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 108:
 #line 458 "mon_parse.y" /* yacc.c:1646  */
     { monitor_change_device((yyvsp[-1].i)); }
-#line 2937 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2937 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 109:
 #line 460 "mon_parse.y" /* yacc.c:1646  */
     { mon_export(); }
-#line 2943 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2943 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 110:
 #line 462 "mon_parse.y" /* yacc.c:1646  */
     { mon_quit(); YYACCEPT; }
-#line 2949 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2949 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 111:
 #line 464 "mon_parse.y" /* yacc.c:1646  */
     { mon_exit(); YYACCEPT; }
-#line 2955 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2955 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 112:
 #line 468 "mon_parse.y" /* yacc.c:1646  */
     { mon_drive_execute_disk_cmd((yyvsp[-1].str)); }
-#line 2961 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2961 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 113:
 #line 470 "mon_parse.y" /* yacc.c:1646  */
     { mon_out("\t%d\n",(yyvsp[-1].i)); }
-#line 2967 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2967 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 114:
 #line 472 "mon_parse.y" /* yacc.c:1646  */
     { mon_command_print_help(NULL); }
-#line 2973 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2973 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 115:
 #line 474 "mon_parse.y" /* yacc.c:1646  */
     { mon_command_print_help((yyvsp[-1].str)); }
-#line 2979 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2979 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 116:
 #line 476 "mon_parse.y" /* yacc.c:1646  */
     { printf("SYSTEM COMMAND: %s\n",(yyvsp[-1].str)); }
-#line 2985 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2985 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 117:
 #line 478 "mon_parse.y" /* yacc.c:1646  */
     { mon_print_convert((yyvsp[-1].i)); }
-#line 2991 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2991 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 118:
 #line 480 "mon_parse.y" /* yacc.c:1646  */
     { mon_change_dir((yyvsp[-1].str)); }
-#line 2997 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 2997 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 119:
 #line 482 "mon_parse.y" /* yacc.c:1646  */
     { mon_keyboard_feed((yyvsp[-1].str)); }
-#line 3003 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3003 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 120:
 #line 484 "mon_parse.y" /* yacc.c:1646  */
     { mon_backtrace(); }
-#line 3009 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3009 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 121:
 #line 486 "mon_parse.y" /* yacc.c:1646  */
     { mon_show_dir((yyvsp[-1].str)); }
-#line 3015 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3015 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 122:
 #line 488 "mon_parse.y" /* yacc.c:1646  */
     { mon_show_pwd(); }
-#line 3021 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3021 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 123:
 #line 490 "mon_parse.y" /* yacc.c:1646  */
     { mon_screenshot_save((yyvsp[-1].str),-1); }
-#line 3027 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3027 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 124:
 #line 492 "mon_parse.y" /* yacc.c:1646  */
     { mon_screenshot_save((yyvsp[-3].str),(yyvsp[-1].i)); }
-#line 3033 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3033 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 125:
 #line 494 "mon_parse.y" /* yacc.c:1646  */
     { mon_resource_get((yyvsp[-1].str)); }
-#line 3039 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3039 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 126:
 #line 496 "mon_parse.y" /* yacc.c:1646  */
     { mon_resource_set((yyvsp[-2].str),(yyvsp[-1].str)); }
-#line 3045 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3045 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 127:
 #line 498 "mon_parse.y" /* yacc.c:1646  */
     { resources_load((yyvsp[-1].str)); }
-#line 3051 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3051 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 128:
 #line 500 "mon_parse.y" /* yacc.c:1646  */
     { resources_save((yyvsp[-1].str)); }
-#line 3057 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3057 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 129:
 #line 502 "mon_parse.y" /* yacc.c:1646  */
     { mon_reset_machine(-1); }
-#line 3063 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3063 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 130:
 #line 504 "mon_parse.y" /* yacc.c:1646  */
     { mon_reset_machine((yyvsp[-1].i)); }
-#line 3069 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3069 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 131:
 #line 506 "mon_parse.y" /* yacc.c:1646  */
     { mon_tape_ctrl((yyvsp[-1].i)); }
-#line 3075 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3075 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 132:
 #line 508 "mon_parse.y" /* yacc.c:1646  */
     { mon_cart_freeze(); }
-#line 3081 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3081 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 133:
 #line 510 "mon_parse.y" /* yacc.c:1646  */
     { }
-#line 3087 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3087 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 134:
 #line 512 "mon_parse.y" /* yacc.c:1646  */
     { mon_stopwatch_reset(); }
-#line 3093 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3093 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 135:
 #line 514 "mon_parse.y" /* yacc.c:1646  */
     { mon_stopwatch_show("Stopwatch: ", "\n"); }
-#line 3099 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3099 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 136:
 #line 518 "mon_parse.y" /* yacc.c:1646  */
     { mon_file_load((yyvsp[-3].str), (yyvsp[-2].i), (yyvsp[-1].a), FALSE); }
-#line 3105 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3105 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 137:
 #line 520 "mon_parse.y" /* yacc.c:1646  */
     { mon_file_load((yyvsp[-3].str), (yyvsp[-2].i), (yyvsp[-1].a), TRUE); }
-#line 3111 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3111 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 138:
 #line 522 "mon_parse.y" /* yacc.c:1646  */
     { mon_file_save((yyvsp[-3].str), (yyvsp[-2].i), (yyvsp[-1].range)[0], (yyvsp[-1].range)[1], FALSE); }
-#line 3117 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3117 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 139:
 #line 524 "mon_parse.y" /* yacc.c:1646  */
     { return ERR_EXPECT_DEVICE_NUM; }
-#line 3123 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3123 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 140:
 #line 526 "mon_parse.y" /* yacc.c:1646  */
     { return ERR_EXPECT_ADDRESS; }
-#line 3129 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3129 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 141:
 #line 528 "mon_parse.y" /* yacc.c:1646  */
     { mon_file_save((yyvsp[-3].str), (yyvsp[-2].i), (yyvsp[-1].range)[0], (yyvsp[-1].range)[1], TRUE); }
-#line 3135 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3135 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 142:
 #line 530 "mon_parse.y" /* yacc.c:1646  */
     { return ERR_EXPECT_ADDRESS; }
-#line 3141 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3141 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 143:
 #line 532 "mon_parse.y" /* yacc.c:1646  */
     { mon_file_verify((yyvsp[-3].str),(yyvsp[-2].i),(yyvsp[-1].a)); }
-#line 3147 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3147 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 144:
 #line 534 "mon_parse.y" /* yacc.c:1646  */
     { return ERR_EXPECT_ADDRESS; }
-#line 3153 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3153 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 145:
 #line 536 "mon_parse.y" /* yacc.c:1646  */
     { mon_drive_block_cmd(0,(yyvsp[-3].i),(yyvsp[-2].i),(yyvsp[-1].a)); }
-#line 3159 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3159 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 146:
 #line 538 "mon_parse.y" /* yacc.c:1646  */
     { mon_drive_block_cmd(1,(yyvsp[-3].i),(yyvsp[-2].i),(yyvsp[-1].a)); }
-#line 3165 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3165 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 147:
 #line 540 "mon_parse.y" /* yacc.c:1646  */
     { mon_drive_list(-1); }
-#line 3171 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3171 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 148:
 #line 542 "mon_parse.y" /* yacc.c:1646  */
     { mon_drive_list((yyvsp[-1].i)); }
-#line 3177 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3177 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 149:
 #line 544 "mon_parse.y" /* yacc.c:1646  */
     { mon_attach((yyvsp[-2].str),(yyvsp[-1].i)); }
-#line 3183 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3183 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 150:
 #line 546 "mon_parse.y" /* yacc.c:1646  */
     { mon_detach((yyvsp[-1].i)); }
-#line 3189 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3189 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 151:
 #line 548 "mon_parse.y" /* yacc.c:1646  */
     { mon_autostart((yyvsp[-1].str),0,1); }
-#line 3195 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3195 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 152:
 #line 550 "mon_parse.y" /* yacc.c:1646  */
     { mon_autostart((yyvsp[-3].str),(yyvsp[-1].i),1); }
-#line 3201 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3201 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 153:
 #line 552 "mon_parse.y" /* yacc.c:1646  */
     { mon_autostart((yyvsp[-1].str),0,0); }
-#line 3207 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3207 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 154:
 #line 554 "mon_parse.y" /* yacc.c:1646  */
     { mon_autostart((yyvsp[-3].str),(yyvsp[-1].i),0); }
-#line 3213 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3213 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 155:
 #line 558 "mon_parse.y" /* yacc.c:1646  */
     { mon_record_commands((yyvsp[-1].str)); }
-#line 3219 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3219 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 156:
 #line 560 "mon_parse.y" /* yacc.c:1646  */
     { mon_end_recording(); }
-#line 3225 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3225 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 157:
 #line 562 "mon_parse.y" /* yacc.c:1646  */
     { mon_playback_init((yyvsp[-1].str)); }
-#line 3231 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3231 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 158:
 #line 566 "mon_parse.y" /* yacc.c:1646  */
     { mon_memory_fill((yyvsp[-2].a), BAD_ADDR, (unsigned char *)(yyvsp[-1].str)); }
-#line 3237 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3237 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 159:
 #line 568 "mon_parse.y" /* yacc.c:1646  */
     { printf("Not yet.\n"); }
-#line 3243 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3243 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 160:
 #line 572 "mon_parse.y" /* yacc.c:1646  */
     { yydebug = 1; }
-#line 3249 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3249 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 161:
 #line 575 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.str) = (yyvsp[0].str); }
-#line 3255 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3255 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 162:
 #line 578 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.str) = (yyvsp[0].str); }
-#line 3261 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3261 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 163:
 #line 579 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.str) = NULL; }
-#line 3267 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3267 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 165:
 #line 583 "mon_parse.y" /* yacc.c:1646  */
     { return ERR_EXPECT_FILENAME; }
-#line 3273 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3273 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 167:
 #line 587 "mon_parse.y" /* yacc.c:1646  */
     { return ERR_EXPECT_DEVICE_NUM; }
-#line 3279 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3279 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 168:
 #line 590 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = (yyvsp[-1].i) | (yyvsp[0].i); }
-#line 3285 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3285 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 169:
 #line 591 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = (yyvsp[0].i); }
-#line 3291 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3291 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 170:
 #line 594 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = (yyvsp[0].i); }
-#line 3297 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3297 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 171:
 #line 595 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = 0; }
-#line 3303 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3303 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 172:
 #line 598 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = new_reg(default_memspace, (yyvsp[0].reg)); }
-#line 3309 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3309 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 173:
 #line 599 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = new_reg((yyvsp[-1].i), (yyvsp[0].reg)); }
-#line 3315 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3315 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 176:
 #line 607 "mon_parse.y" /* yacc.c:1646  */
     { (monitor_cpu_for_memspace[reg_memspace((yyvsp[-2].i))]->mon_register_set_val)(reg_memspace((yyvsp[-2].i)), reg_regid((yyvsp[-2].i)), (WORD) (yyvsp[0].i)); }
-#line 3321 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3321 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 177:
 #line 610 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = (yyvsp[0].i); }
-#line 3327 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3327 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 178:
 #line 611 "mon_parse.y" /* yacc.c:1646  */
     { return ERR_EXPECT_CHECKNUM; }
-#line 3333 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3333 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 180:
 #line 615 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.range)[0] = (yyvsp[0].a); (yyval.range)[1] = BAD_ADDR; }
-#line 3339 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3339 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 181:
 #line 618 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.range)[0] = (yyvsp[-2].a); (yyval.range)[1] = (yyvsp[0].a); }
-#line 3345 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3345 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 182:
 #line 620 "mon_parse.y" /* yacc.c:1646  */
     { if (resolve_range(e_default_space, (yyval.range), (yyvsp[0].str))) return ERR_ADDR_TOO_BIG; }
-#line 3351 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3351 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 183:
 #line 622 "mon_parse.y" /* yacc.c:1646  */
     { if (resolve_range((yyvsp[-2].i), (yyval.range), (yyvsp[0].str))) return ERR_ADDR_TOO_BIG; }
-#line 3357 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3357 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 184:
 #line 625 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.a) = (yyvsp[0].a); }
-#line 3363 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3363 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 185:
 #line 626 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.a) = BAD_ADDR; }
-#line 3369 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3369 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 186:
@@ -3374,7 +3374,7 @@ yyreduce:
              (yyval.a) = new_addr(e_default_space,(yyvsp[0].i));
              if (opt_asm) new_cmd = asm_mode = 1;
          }
-#line 3378 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3378 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 187:
@@ -3383,7 +3383,7 @@ yyreduce:
              (yyval.a) = new_addr((yyvsp[-2].i), (yyvsp[0].i));
              if (opt_asm) new_cmd = asm_mode = 1;
          }
-#line 3387 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3387 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 188:
@@ -3395,103 +3395,103 @@ yyreduce:
              else
                  return ERR_UNDEFINED_LABEL;
          }
-#line 3399 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3399 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 191:
 #line 653 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = e_comp_space; }
-#line 3405 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3405 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 192:
 #line 654 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = e_disk8_space; }
-#line 3411 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3411 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 193:
 #line 655 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = e_disk9_space; }
-#line 3417 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3417 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 194:
 #line 656 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = e_disk10_space; }
-#line 3423 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3423 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 195:
 #line 657 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = e_disk11_space; }
-#line 3429 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3429 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 196:
 #line 660 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = (yyvsp[0].i); if (!CHECK_ADDR((yyvsp[0].i))) return ERR_ADDR_TOO_BIG; }
-#line 3435 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3435 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 197:
 #line 662 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = (yyvsp[0].i); }
-#line 3441 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3441 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 198:
 #line 664 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = (yyvsp[-2].i) + (yyvsp[0].i); }
-#line 3447 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3447 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 199:
 #line 665 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = (yyvsp[-2].i) - (yyvsp[0].i); }
-#line 3453 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3453 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 200:
 #line 666 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = (yyvsp[-2].i) * (yyvsp[0].i); }
-#line 3459 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3459 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 201:
 #line 667 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = ((yyvsp[0].i)) ? ((yyvsp[-2].i) / (yyvsp[0].i)) : 1; }
-#line 3465 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3465 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 202:
 #line 668 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = (yyvsp[-1].i); }
-#line 3471 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3471 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 203:
 #line 669 "mon_parse.y" /* yacc.c:1646  */
     { return ERR_MISSING_CLOSE_PAREN; }
-#line 3477 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3477 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 204:
 #line 670 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = (yyvsp[0].i); }
-#line 3483 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3483 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 205:
 #line 673 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.cond_node) = (yyvsp[0].cond_node); }
-#line 3489 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3489 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 206:
 #line 674 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.cond_node) = 0; }
-#line 3495 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3495 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 207:
@@ -3500,31 +3500,31 @@ yyreduce:
                (yyval.cond_node) = new_cond; (yyval.cond_node)->is_parenthized = FALSE;
                (yyval.cond_node)->child1 = (yyvsp[-2].cond_node); (yyval.cond_node)->child2 = (yyvsp[0].cond_node); (yyval.cond_node)->operation = (yyvsp[-1].cond_op);
            }
-#line 3504 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3504 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 208:
 #line 682 "mon_parse.y" /* yacc.c:1646  */
     { return ERR_INCOMPLETE_COMPARE_OP; }
-#line 3510 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3510 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 209:
 #line 684 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.cond_node) = (yyvsp[-1].cond_node); (yyval.cond_node)->is_parenthized = TRUE; }
-#line 3516 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3516 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 210:
 #line 686 "mon_parse.y" /* yacc.c:1646  */
     { return ERR_MISSING_CLOSE_PAREN; }
-#line 3522 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3522 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 211:
 #line 688 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.cond_node) = (yyvsp[0].cond_node); }
-#line 3528 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3528 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 212:
@@ -3535,7 +3535,7 @@ yyreduce:
                             (yyval.cond_node)->reg_num = (yyvsp[0].i); (yyval.cond_node)->is_reg = TRUE;
                             (yyval.cond_node)->child1 = NULL; (yyval.cond_node)->child2 = NULL;
                           }
-#line 3539 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3539 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 213:
@@ -3546,121 +3546,121 @@ yyreduce:
                             (yyval.cond_node)->value = (yyvsp[0].i); (yyval.cond_node)->is_reg = FALSE;
                             (yyval.cond_node)->child1 = NULL; (yyval.cond_node)->child2 = NULL;
                           }
-#line 3550 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3550 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 216:
 #line 709 "mon_parse.y" /* yacc.c:1646  */
     { mon_add_number_to_buffer((yyvsp[0].i)); }
-#line 3556 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3556 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 217:
 #line 710 "mon_parse.y" /* yacc.c:1646  */
     { mon_add_string_to_buffer((yyvsp[0].str)); }
-#line 3562 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3562 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 220:
 #line 717 "mon_parse.y" /* yacc.c:1646  */
     { mon_add_number_to_buffer((yyvsp[0].i)); }
-#line 3568 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3568 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 221:
 #line 718 "mon_parse.y" /* yacc.c:1646  */
     { mon_add_number_masked_to_buffer((yyvsp[0].i), 0x00); }
-#line 3574 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3574 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 222:
 #line 719 "mon_parse.y" /* yacc.c:1646  */
     { mon_add_string_to_buffer((yyvsp[0].str)); }
-#line 3580 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3580 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 223:
 #line 722 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = (yyvsp[0].i); }
-#line 3586 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3586 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 224:
 #line 723 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = (monitor_cpu_for_memspace[reg_memspace((yyvsp[0].i))]->mon_register_get_val)(reg_memspace((yyvsp[0].i)), reg_regid((yyvsp[0].i))); }
-#line 3592 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3592 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 225:
 #line 726 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = (yyvsp[0].i); }
-#line 3598 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3598 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 226:
 #line 727 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = strtol((yyvsp[0].str), NULL, 10); }
-#line 3604 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3604 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 227:
 #line 728 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = strtol((yyvsp[0].str), NULL, 10); }
-#line 3610 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3610 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 228:
 #line 729 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = strtol((yyvsp[0].str), NULL, 10); }
-#line 3616 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3616 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 229:
 #line 732 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = resolve_datatype(B_NUMBER,(yyvsp[0].str)); }
-#line 3622 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3622 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 230:
 #line 733 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = resolve_datatype(O_NUMBER,(yyvsp[0].str)); }
-#line 3628 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3628 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 231:
 #line 734 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = resolve_datatype(D_NUMBER,(yyvsp[0].str)); }
-#line 3634 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3634 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 232:
 #line 737 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = (yyvsp[0].i); }
-#line 3640 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3640 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 233:
 #line 738 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = (yyvsp[0].i); }
-#line 3646 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3646 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 234:
 #line 739 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = (yyvsp[0].i); }
-#line 3652 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3652 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 235:
 #line 740 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = (yyvsp[0].i); }
-#line 3658 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3658 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 236:
 #line 741 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = (yyvsp[0].i); }
-#line 3664 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3664 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 240:
@@ -3674,13 +3674,13 @@ yyreduce:
                                                 }
                                                 opt_asm = 0;
                                               }
-#line 3678 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3678 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 242:
 #line 760 "mon_parse.y" /* yacc.c:1646  */
     { asm_mode = 0; }
-#line 3684 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3684 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 243:
@@ -3692,7 +3692,7 @@ yyreduce:
                           (yyval.mode).addr_mode = ASM_ADDR_MODE_IMMEDIATE;
                           (yyval.mode).param = (yyvsp[0].i);
                         } }
-#line 3696 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3696 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 244:
@@ -3705,7 +3705,7 @@ yyreduce:
                (yyval.mode).param = (yyvsp[0].i);
              }
            }
-#line 3709 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3709 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 245:
@@ -3718,7 +3718,7 @@ yyreduce:
                             (yyval.mode).param = (yyvsp[-2].i);
                           }
                         }
-#line 3722 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3722 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 246:
@@ -3731,7 +3731,7 @@ yyreduce:
                             (yyval.mode).param = (yyvsp[-2].i);
                           }
                         }
-#line 3735 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3735 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 247:
@@ -3742,7 +3742,7 @@ yyreduce:
                             (yyval.mode).addr_submode = (yyvsp[-2].i);
                           }
                         }
-#line 3746 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3746 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 248:
@@ -3755,7 +3755,7 @@ yyreduce:
                                (yyval.mode).param = (yyvsp[-1].i);
                              }
                            }
-#line 3759 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3759 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 249:
@@ -3768,193 +3768,193 @@ yyreduce:
                                            (yyval.mode).param = (yyvsp[-3].i);
                                          }
                                        }
-#line 3772 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3772 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 250:
 #line 817 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.mode).addr_mode = ASM_ADDR_MODE_INDIRECT_Y; (yyval.mode).param = (yyvsp[-3].i); }
-#line 3778 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3778 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 251:
 #line 818 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.mode).addr_mode = ASM_ADDR_MODE_REG_IND_BC; }
-#line 3784 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3784 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 252:
 #line 819 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.mode).addr_mode = ASM_ADDR_MODE_REG_IND_DE; }
-#line 3790 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3790 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 253:
 #line 820 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.mode).addr_mode = ASM_ADDR_MODE_REG_IND_HL; }
-#line 3796 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3796 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 254:
 #line 821 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.mode).addr_mode = ASM_ADDR_MODE_REG_IND_IX; }
-#line 3802 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3802 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 255:
 #line 822 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.mode).addr_mode = ASM_ADDR_MODE_REG_IND_IY; }
-#line 3808 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3808 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 256:
 #line 823 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.mode).addr_mode = ASM_ADDR_MODE_REG_IND_SP; }
-#line 3814 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3814 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 257:
 #line 825 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.mode).addr_mode = ASM_ADDR_MODE_ABSOLUTE_A; (yyval.mode).param = (yyvsp[-3].i); }
-#line 3820 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3820 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 258:
 #line 827 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.mode).addr_mode = ASM_ADDR_MODE_ABSOLUTE_HL; (yyval.mode).param = (yyvsp[-3].i); }
-#line 3826 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3826 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 259:
 #line 829 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.mode).addr_mode = ASM_ADDR_MODE_ABSOLUTE_IX; (yyval.mode).param = (yyvsp[-3].i); }
-#line 3832 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3832 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 260:
 #line 831 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.mode).addr_mode = ASM_ADDR_MODE_ABSOLUTE_IY; (yyval.mode).param = (yyvsp[-3].i); }
-#line 3838 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3838 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 261:
 #line 832 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.mode).addr_mode = ASM_ADDR_MODE_IMPLIED; }
-#line 3844 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3844 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 262:
 #line 833 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.mode).addr_mode = ASM_ADDR_MODE_ACCUMULATOR; }
-#line 3850 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3850 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 263:
 #line 834 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.mode).addr_mode = ASM_ADDR_MODE_REG_B; }
-#line 3856 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3856 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 264:
 #line 835 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.mode).addr_mode = ASM_ADDR_MODE_REG_C; }
-#line 3862 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3862 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 265:
 #line 836 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.mode).addr_mode = ASM_ADDR_MODE_REG_D; }
-#line 3868 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3868 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 266:
 #line 837 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.mode).addr_mode = ASM_ADDR_MODE_REG_E; }
-#line 3874 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3874 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 267:
 #line 838 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.mode).addr_mode = ASM_ADDR_MODE_REG_H; }
-#line 3880 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3880 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 268:
 #line 839 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.mode).addr_mode = ASM_ADDR_MODE_REG_IXH; }
-#line 3886 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3886 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 269:
 #line 840 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.mode).addr_mode = ASM_ADDR_MODE_REG_IYH; }
-#line 3892 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3892 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 270:
 #line 841 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.mode).addr_mode = ASM_ADDR_MODE_REG_L; }
-#line 3898 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3898 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 271:
 #line 842 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.mode).addr_mode = ASM_ADDR_MODE_REG_IXL; }
-#line 3904 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3904 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 272:
 #line 843 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.mode).addr_mode = ASM_ADDR_MODE_REG_IYL; }
-#line 3910 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3910 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 273:
 #line 844 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.mode).addr_mode = ASM_ADDR_MODE_REG_AF; }
-#line 3916 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3916 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 274:
 #line 845 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.mode).addr_mode = ASM_ADDR_MODE_REG_BC; }
-#line 3922 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3922 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 275:
 #line 846 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.mode).addr_mode = ASM_ADDR_MODE_REG_DE; }
-#line 3928 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3928 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 276:
 #line 847 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.mode).addr_mode = ASM_ADDR_MODE_REG_HL; }
-#line 3934 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3934 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 277:
 #line 848 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.mode).addr_mode = ASM_ADDR_MODE_REG_IX; }
-#line 3940 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3940 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 278:
 #line 849 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.mode).addr_mode = ASM_ADDR_MODE_REG_IY; }
-#line 3946 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3946 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 279:
 #line 850 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.mode).addr_mode = ASM_ADDR_MODE_REG_SP; }
-#line 3952 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3952 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 280:
 #line 852 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.mode).addr_mode = ASM_ADDR_MODE_DIRECT; (yyval.mode).param = (yyvsp[0].i); }
-#line 3958 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3958 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 281:
@@ -3974,7 +3974,7 @@ yyreduce:
             mon_out("offset too large even for 16 bits (signed)\n");
         }
     }
-#line 3978 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3978 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 282:
@@ -3983,7 +3983,7 @@ yyreduce:
         (yyval.mode).addr_mode = ASM_ADDR_MODE_INDEXED;
         (yyval.mode).addr_submode = 0x80 | (yyvsp[-1].i) | ASM_ADDR_MODE_INDEXED_INC1;
         }
-#line 3987 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3987 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 283:
@@ -3992,7 +3992,7 @@ yyreduce:
         (yyval.mode).addr_mode = ASM_ADDR_MODE_INDEXED;
         (yyval.mode).addr_submode = 0x80 | (yyvsp[-2].i) | ASM_ADDR_MODE_INDEXED_INC2;
         }
-#line 3996 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 3996 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 284:
@@ -4001,7 +4001,7 @@ yyreduce:
         (yyval.mode).addr_mode = ASM_ADDR_MODE_INDEXED;
         (yyval.mode).addr_submode = 0x80 | (yyvsp[0].i) | ASM_ADDR_MODE_INDEXED_DEC1;
         }
-#line 4005 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 4005 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 285:
@@ -4010,7 +4010,7 @@ yyreduce:
         (yyval.mode).addr_mode = ASM_ADDR_MODE_INDEXED;
         (yyval.mode).addr_submode = 0x80 | (yyvsp[0].i) | ASM_ADDR_MODE_INDEXED_DEC2;
         }
-#line 4014 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 4014 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 286:
@@ -4019,7 +4019,7 @@ yyreduce:
         (yyval.mode).addr_mode = ASM_ADDR_MODE_INDEXED;
         (yyval.mode).addr_submode = 0x80 | (yyvsp[0].i) | ASM_ADDR_MODE_INDEXED_OFF0;
         }
-#line 4023 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 4023 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 287:
@@ -4028,7 +4028,7 @@ yyreduce:
         (yyval.mode).addr_mode = ASM_ADDR_MODE_INDEXED;
         (yyval.mode).addr_submode = 0x80 | (yyvsp[-1].i) | ASM_ADDR_MODE_INDEXED_OFFB;
         }
-#line 4032 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 4032 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 288:
@@ -4037,7 +4037,7 @@ yyreduce:
         (yyval.mode).addr_mode = ASM_ADDR_MODE_INDEXED;
         (yyval.mode).addr_submode = 0x80 | (yyvsp[-1].i) | ASM_ADDR_MODE_INDEXED_OFFA;
         }
-#line 4041 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 4041 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 289:
@@ -4046,7 +4046,7 @@ yyreduce:
         (yyval.mode).addr_mode = ASM_ADDR_MODE_INDEXED;
         (yyval.mode).addr_submode = 0x80 | (yyvsp[-1].i) | ASM_ADDR_MODE_INDEXED_OFFD;
         }
-#line 4050 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 4050 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 290:
@@ -4063,7 +4063,7 @@ yyreduce:
             mon_out("offset too large even for 16 bits (signed)\n");
         }
     }
-#line 4067 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 4067 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 291:
@@ -4083,7 +4083,7 @@ yyreduce:
             mon_out("offset too large even for 16 bits (signed)\n");
         }
     }
-#line 4087 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 4087 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 292:
@@ -4092,7 +4092,7 @@ yyreduce:
         (yyval.mode).addr_mode = ASM_ADDR_MODE_INDEXED;
         (yyval.mode).addr_submode = 0x80 | (yyvsp[-2].i) | ASM_ADDR_MODE_INDEXED_INC1;
         }
-#line 4096 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 4096 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 293:
@@ -4101,7 +4101,7 @@ yyreduce:
         (yyval.mode).addr_mode = ASM_ADDR_MODE_INDEXED;
         (yyval.mode).addr_submode = 0x80 | (yyvsp[-3].i) | ASM_ADDR_MODE_INDEXED_INC2;
         }
-#line 4105 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 4105 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 294:
@@ -4110,7 +4110,7 @@ yyreduce:
         (yyval.mode).addr_mode = ASM_ADDR_MODE_INDEXED;
         (yyval.mode).addr_submode = 0x80 | (yyvsp[-1].i) | ASM_ADDR_MODE_INDEXED_DEC1;
         }
-#line 4114 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 4114 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 295:
@@ -4119,7 +4119,7 @@ yyreduce:
         (yyval.mode).addr_mode = ASM_ADDR_MODE_INDEXED;
         (yyval.mode).addr_submode = 0x80 | (yyvsp[-1].i) | ASM_ADDR_MODE_INDEXED_DEC2;
         }
-#line 4123 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 4123 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 296:
@@ -4128,7 +4128,7 @@ yyreduce:
         (yyval.mode).addr_mode = ASM_ADDR_MODE_INDEXED;
         (yyval.mode).addr_submode = 0x80 | (yyvsp[-1].i) | ASM_ADDR_MODE_INDEXED_OFF0;
         }
-#line 4132 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 4132 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 297:
@@ -4137,7 +4137,7 @@ yyreduce:
         (yyval.mode).addr_mode = ASM_ADDR_MODE_INDEXED;
         (yyval.mode).addr_submode = 0x80 | (yyvsp[-2].i) | ASM_ADDR_MODE_INDEXED_OFFB;
         }
-#line 4141 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 4141 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 298:
@@ -4146,7 +4146,7 @@ yyreduce:
         (yyval.mode).addr_mode = ASM_ADDR_MODE_INDEXED;
         (yyval.mode).addr_submode = 0x80 | (yyvsp[-2].i) | ASM_ADDR_MODE_INDEXED_OFFA;
         }
-#line 4150 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 4150 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 299:
@@ -4155,7 +4155,7 @@ yyreduce:
         (yyval.mode).addr_mode = ASM_ADDR_MODE_INDEXED;
         (yyval.mode).addr_submode = 0x80 | (yyvsp[-2].i) | ASM_ADDR_MODE_INDEXED_OFFD;
         }
-#line 4159 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 4159 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 300:
@@ -4172,7 +4172,7 @@ yyreduce:
             mon_out("offset too large even for 16 bits (signed)\n");
         }
     }
-#line 4176 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 4176 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 301:
@@ -4182,41 +4182,41 @@ yyreduce:
         (yyval.mode).addr_submode = 0x80 | ASM_ADDR_MODE_EXTENDED_INDIRECT;
         (yyval.mode).param = (yyvsp[-1].i);
         }
-#line 4186 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 4186 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 302:
 #line 980 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = (0 << 5); printf("reg_x\n"); }
-#line 4192 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 4192 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 303:
 #line 981 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = (1 << 5); printf("reg_y\n"); }
-#line 4198 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 4198 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 304:
 #line 982 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = (yyvsp[0].i); }
-#line 4204 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 4204 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 305:
 #line 986 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = (2 << 5); printf("reg_u\n"); }
-#line 4210 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 4210 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
   case 306:
 #line 987 "mon_parse.y" /* yacc.c:1646  */
     { (yyval.i) = (3 << 5); printf("reg_s\n"); }
-#line 4216 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 4216 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
     break;
 
 
-#line 4220 "/home/chris/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
+#line 4220 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires

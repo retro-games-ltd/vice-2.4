@@ -30,8 +30,8 @@
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
-#ifndef YY_YY__HOME_CHRIS_SRC_VICE__SRC_MONITOR_MON_PARSE_H_INCLUDED
-# define YY_YY__HOME_CHRIS_SRC_VICE__SRC_MONITOR_MON_PARSE_H_INCLUDED
+#ifndef YY_YY__HOME_CHRIS_SRC_THE___FIRMWARE_SRC_VICE__SRC_MONITOR_MON_PARSE_H_INCLUDED
+# define YY_YY__HOME_CHRIS_SRC_THE___FIRMWARE_SRC_VICE__SRC_MONITOR_MON_PARSE_H_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 1
@@ -387,7 +387,7 @@ union YYSTYPE
     char *str;
     asm_mode_addr_info_t mode;
 
-#line 391 "/home/chris/src/vice2/src/monitor/mon_parse.h" /* yacc.c:1909  */
+#line 391 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_parse.h" /* yacc.c:1909  */
 };
 
 typedef union YYSTYPE YYSTYPE;
@@ -400,4 +400,4 @@ extern YYSTYPE yylval;
 
 int yyparse (void);
 
-#endif /* !YY_YY__HOME_CHRIS_SRC_VICE__SRC_MONITOR_MON_PARSE_H_INCLUDED  */
+#endif /* !YY_YY__HOME_CHRIS_SRC_THE___FIRMWARE_SRC_VICE__SRC_MONITOR_MON_PARSE_H_INCLUDED  */

@@ -1,5 +1,5 @@
 
-#line 3 "mon_lex.c"
+#line 3 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_lex.c"
 
 #define  YY_INT_ALIGNED short int
 
@@ -1506,7 +1506,7 @@ send:
 }
 
 
-#line 1510 "mon_lex.c"
+#line 1510 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_lex.c"
 
 #define INITIAL 0
 #define FNAME 1
@@ -1759,7 +1759,7 @@ YY_DECL
    }
 
 
-#line 1763 "mon_lex.c"
+#line 1763 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_lex.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -3054,7 +3054,7 @@ YY_RULE_SETUP
 #line 466 "mon_lex.l"
 ECHO;
 	YY_BREAK
-#line 3058 "mon_lex.c"
+#line 3058 "/home/chris/src/the64-firmware/src/vice2/src/monitor/mon_lex.c"
 			case YY_STATE_EOF(INITIAL):
 			case YY_STATE_EOF(FNAME):
 			case YY_STATE_EOF(CMD):

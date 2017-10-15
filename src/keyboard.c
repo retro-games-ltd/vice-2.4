@@ -420,7 +420,7 @@ void keyboard_key_pressed(signed long key)
         return;
     }
     /* Alt */
-    if (((key == key_ctrl_alt1) || (key == key_ctrl_alt2)) && !key_alternative)
+    if ((key == key_ctrl_alt1) || (key == key_ctrl_alt2))
     {
         keyboard_alternative_set(1);
         return;

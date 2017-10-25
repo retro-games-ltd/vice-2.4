@@ -986,13 +986,10 @@ static void reboot_for_autostart(const char *program_name, unsigned int mode,
     }
 
     autostart_initial_delay_cycles = min_cycles;
-printf("1 autostart_initial_delay_cycles: %d\n", autostart_initial_delay_cycles);
     resources_get_int("AutostartDelayRandom", &rnd);
     if (rnd) {
-printf( "RAND!\n");
         autostart_initial_delay_cycles += AUTOSTART_RAND();
     }
-printf("2 autostart_initial_delay_cycles: %d\n", autostart_initial_delay_cycles);
     DBG(("autostart_initial_delay_cycles: %d", autostart_initial_delay_cycles));
 
     machine_trigger_reset(MACHINE_RESET_MODE_SOFT);

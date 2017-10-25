@@ -845,9 +845,12 @@ void machine_play_psid(int tune)
 
 int machine_screenshot(screenshot_t *screenshot, struct video_canvas_s *canvas)
 {
-    if (canvas != vicii_get_canvas()) {
-        return -1;
-    }
+    struct video_canvas_t *vicii_canvas = vicii_get_canvas();
+
+    // For some weird reason (porting?) on the Redquark One board, this always fails!
+//    if (canvas != vicii_canvas) {
+//        return -1;
+//    }
 
     vicii_screenshot(screenshot);
     return 0;

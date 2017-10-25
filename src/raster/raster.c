@@ -71,8 +71,6 @@ static int raster_draw_buffer_alloc(video_canvas_t *canvas,
 
     /* FIXME: Allocate one more line to prevent access violations by the
        scale2x render.  */
-printf( "INIT draw_buffer->draw_biffer to be %d bytes\n", fb_width *(fb_height + 1));
-
     canvas->draw_buffer->draw_buffer = lib_malloc(fb_width * (fb_height + 1));
     *fb_pitch = fb_width;
     return 0;

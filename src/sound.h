@@ -210,5 +210,6 @@ typedef struct sound_chip_s {
 } sound_chip_t;
 
 extern WORD sound_chip_register(sound_chip_t *chip);
+void sound_clear();
 
 #endif

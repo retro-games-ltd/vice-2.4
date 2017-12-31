@@ -1004,8 +1004,8 @@ void sound_clear()
 //    int nr = snddata.bufptr - snddata.bufptr % snddata.fragsize;
 //    int j = snddata.bufsize - nr;
 //printf("Padding (clear) buffer with %d samples\n", j );
-//    snddata.lastsample[0] = 0;
-//    snddata.lastsample[1] = 0;
+    snddata.lastsample[0] = 0;
+    snddata.lastsample[1] = 0;
     //fill_buffer(j, 0);
 
     int i;

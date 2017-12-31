@@ -1001,16 +1001,16 @@ int sound_set_frame_ramp( int direction )
 
 void sound_clear()
 {
-    int nr = snddata.bufptr - snddata.bufptr % snddata.fragsize;
-    int j = snddata.bufsize - nr;
-printf("Padding (clear) buffer with %d samples\n", j );
-snddata.lastsample[0] = 0;
-snddata.lastsample[1] = 0;
-    fill_buffer(j, 0);
+//    int nr = snddata.bufptr - snddata.bufptr % snddata.fragsize;
+//    int j = snddata.bufsize - nr;
+//printf("Padding (clear) buffer with %d samples\n", j );
+//    snddata.lastsample[0] = 0;
+//    snddata.lastsample[1] = 0;
+    //fill_buffer(j, 0);
 
     int i;
     for (i = 0; i < SOUND_BUFSIZE * SOUND_CHANNELS_MAX; i++) {
-        snddata.buffer[i] = 0;
+        snddata.buffer[i] = snddata.lastsample[0];
     }
 }
 

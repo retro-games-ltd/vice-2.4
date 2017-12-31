@@ -606,6 +606,13 @@ static void enablesound(void)
     }
 }
 
+static int skip_frames;
+void
+sound_skip_frames( int frames )
+{
+    skip_frames = frames;
+}
+
 /* close sid device and show error dialog */
 static int sound_error(const char *msg)
 {
@@ -739,6 +746,12 @@ static void sid_close(void)
             snddata.psid[c] = NULL;
         }
     }
+
+    if( temp_buffer != NULL ) {
+        lib_free(temp_buffer);
+        temp_buffer = NULL;
+        temp_buffer_size = 0;
+    }
 }
 
 sound_t *sound_get_psid(unsigned int channel)
@@ -764,6 +777,7 @@ int sound_open(void)
     if (suspend_time > 0 && disabletime) {
         return 1;
     }
+    if( skip_frames && skip_frames-- ) return 1;
 
     /* Opening the sound device and initializing the sound engine
        might take some time. */
@@ -979,6 +993,28 @@ void sound_close(void)
     vsync_suspend_speed_eval();
 }
 
+int frame_ramp = 0;
+int sound_set_frame_ramp( int direction )
+{
+    frame_ramp = (direction > 0) ? 1 : ((direction < 0) ? -1 : 0);
+}
+
+void sound_clear()
+{
+    int nr = snddata.bufptr - snddata.bufptr % snddata.fragsize;
+    int j = snddata.bufsize - nr;
+printf("Padding (clear) buffer with %d samples\n", j );
+snddata.lastsample[0] = 0;
+snddata.lastsample[1] = 0;
+    fill_buffer(j, 0);
+
+    int i;
+    for (i = 0; i < SOUND_BUFSIZE * SOUND_CHANNELS_MAX; i++) {
+        snddata.buffer[i] = 0;
+    }
+}
+
+
 /* run sid */
 static int sound_run_sound(void)
 {
@@ -986,6 +1022,7 @@ static int sound_run_sound(void)
     int delta_t = 0;
     SWORD *bufferptr;
     static int overflow_warning_count = 0;
+//printf("Sound_run_sound\n");
 
     /* XXX: implement the exact ... */
     if (!playback_enabled || (suspend_time > 0 && disabletime)) {
@@ -1009,6 +1046,7 @@ static int sound_run_sound(void)
                                              snddata.sound_output_channels,
                                              snddata.sound_chip_channels,
                                              &delta_t);
+
         if (volume < 100) {
             for (i = 0; i < (nr * snddata.sound_output_channels); i++) {
                 bufferptr[i] = (volume!=0) ? (bufferptr[i]/(100 / volume)) : 0;
@@ -1049,6 +1087,18 @@ static int sound_run_sound(void)
             }
         }
         snddata.fclk += nr * snddata.clkstep;
+    }
+
+    // Redquark
+    if (frame_ramp != 0) {
+        float v = (frame_ramp > 0) ? 0.1 : 100;
+        float d = (frame_ramp > 0) ? 100.f/nr : -(100.f/nr);
+        for (i = 0; i < (nr * snddata.sound_output_channels); i += snddata.sound_output_channels )  {
+            bufferptr[i+0] = bufferptr[i+0] / (100 / v);
+            bufferptr[i+1] = bufferptr[i+1] / (100 / v);
+            v += d;
+        }
+        frame_ramp = 0;
     }
 
     snddata.bufptr += nr;
@@ -1099,6 +1149,7 @@ double sound_flush()
     char *state;
     static time_t prev;
     time_t now;
+//printf("Sound flush\n");
 
     if (!playback_enabled) {
         if (sdev_open) {
@@ -1177,9 +1228,12 @@ double sound_flush()
             /* Calculate unused space in buffer, accounting for data we are
              * about to write. */
             j = snddata.bufsize - nr;
-
             /* Fill up sound hardware buffer. */
             if (j > 0) {
+//printf("Need to fill buffer with %d values\n", j );
+// Force fill value to 0 to avoid clicks when frame drops (When redquark pause is released)
+snddata.lastsample[0] = 0;
+snddata.lastsample[1] = 0;
                 fill_buffer(j, 0);
             }
             snddata.prevfill = j;

@@ -65,7 +65,6 @@ video_canvas_t *video_canvas_init(void)
     canvas->videoconfig = lib_calloc(1, sizeof(video_render_config_t));
 
     canvas->draw_buffer = lib_calloc(1, sizeof(draw_buffer_t));
-printf( "\n\n*** INIT canvas->draw_buffer to %x\n", canvas->draw_buffer);
     canvas->viewport = lib_calloc(1, sizeof(viewport_t));
     canvas->geometry = lib_calloc(1, sizeof(geometry_t));
 

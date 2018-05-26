@@ -557,7 +557,6 @@ void autostart_reinit(CLOCK _min_cycles, int _handle_drive_true_emulation,
     lnmx = _lnmx;
 
     min_cycles = _min_cycles;
-printf( "Setting min_cycles to %d\n", _min_cycles);
 
     handle_drive_true_emulation_by_machine = _handle_drive_true_emulation;
 

@@ -128,8 +128,6 @@ static int raster_realize_frame_buffer(raster_t *raster)
       : raster->geometry->last_displayed_line + 1; /* allocate extra space for the */
               /* lower part of the visible lower border (lines 0+) on NTSC VIC-II */
 
-printf( "fb_width = %d  fb_height = %d\n", fb_width, fb_height);
-
     if (fb_width > 0 && fb_height > 0) {
         if (raster_draw_buffer_alloc(raster->canvas, fb_width, fb_height,
             &fb_pitch))

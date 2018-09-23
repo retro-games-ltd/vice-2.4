@@ -100,7 +100,8 @@ static enum {
     AUTOSTART_WAITLOADING,
     AUTOSTART_WAITSEARCHINGFOR,
     AUTOSTART_INJECT,
-    AUTOSTART_DONE
+    AUTOSTART_DONE,
+    AUTOSTART_WAITLOAD
 } autostartmode = AUTOSTART_NONE;
 
 #define AUTOSTART_WAIT_BLINK   0
@@ -446,7 +447,6 @@ static enum { YES, NO, NOT_YET } check(const char *s, unsigned int blink_mode)
         addr = screen_addr;
 
     for (i = 0; s[i] != '\0'; i++) {
-
         if (mem_read((WORD)(addr + i)) != s[i] % 64) {
             if (mem_read((WORD)(addr + i)) != (BYTE)32)
                 return NO;
@@ -782,8 +782,11 @@ static void advance_hasdisk(void)
         lib_free(tmp);
 
         if (!traps) {
+//printf("NO TRAPS\n");
             if (AutostartWarp) {
-                autostartmode = AUTOSTART_WAITSEARCHINGFOR;
+//printf("AUTOSTART WARP\n");
+                //autostartmode = AUTOSTART_WAITSEARCHINGFOR;
+                autostartmode = AUTOSTART_WAITLOAD;
             } else {
                 /* be most compatible if warp is disabled */
                 if (autostart_run_mode == AUTOSTART_MODE_RUN) {
@@ -792,6 +795,7 @@ static void advance_hasdisk(void)
                 autostart_done();
             }
         } else {
+//printf("USING TRAPS\n");
             autostartmode = AUTOSTART_LOADINGDISK;
             machine_bus_attention_callback_set(disk_attention_callback);
         }
@@ -835,6 +839,24 @@ static void advance_waitsearchingfor(void)
         break;
       case NO:
         log_message(autostart_log, "NO Searching for ...");
+        disable_warp_if_was_requested();
+        autostart_disable();
+        break;
+      case NOT_YET:
+        break;
+    }
+}
+
+static void advance_waitload(void)
+{
+    //switch (check("LOAD\"*\",8:", AUTOSTART_NOWAIT_BLINK)) {
+    switch (check("LOAD\"", AUTOSTART_NOWAIT_BLINK)) {
+      case YES:
+        log_message(autostart_log, "LOAD ...");
+        autostartmode = AUTOSTART_WAITSEARCHINGFOR;
+        break;
+      case NO:
+        log_message(autostart_log, "NO LOAD ...");
         disable_warp_if_was_requested();
         autostart_disable();
         break;
@@ -951,6 +973,9 @@ void autostart_advance(void)
         break;
       case AUTOSTART_INJECT:
         advance_inject();
+        break;
+      case AUTOSTART_WAITLOAD:
+        advance_waitload();
         break;
       default:
         return;
@@ -1296,7 +1321,7 @@ int autostart_device(int num)
 
 int autostart_in_progress(void)
 {
-    return (autostartmode != AUTOSTART_NONE && autostartmode != AUTOSTART_DONE);
+    return (autostartmode != AUTOSTART_NONE && autostartmode != AUTOSTART_DONE && autostartmode != AUTOSTART_ERROR);
 }
 
 /* Disable autostart on reset.  */

@@ -135,7 +135,7 @@ extern int sound_open(void);
 extern void sound_close(void);
 extern void sound_set_relative_speed(int value);
 extern void sound_set_warp_mode(int value);
-extern void sound_set_machine_parameter(long clock_rate, long ticks_per_frame, float scale);
+extern void sound_set_machine_parameter(long clock_rate, long ticks_per_frame );
 extern void sound_snapshot_prepare(void);
 extern void sound_snapshot_finish(void);
 extern void sound_set_audio_scaling( float audio_freq_scale );

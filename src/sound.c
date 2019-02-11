@@ -1408,7 +1408,7 @@ void sound_resume(void)
 }
 
 /* set PAL/NTSC clock speed */
-void sound_set_machine_parameter(long clock_rate, long ticks_per_frame, float audio_freq_scale)
+void sound_set_machine_parameter(long clock_rate, long ticks_per_frame )
 {
     sid_state_changed = TRUE;
 
@@ -1416,6 +1416,10 @@ void sound_set_machine_parameter(long clock_rate, long ticks_per_frame, float au
     cycles_per_rfsh = ticks_per_frame;
     rfsh_per_sec    = (1.0 /
                       ((double)cycles_per_rfsh / (double)cycles_per_sec));
+}
+
+void sound_set_audio_scaling( float audio_freq_scale )
+{
     audio_scale = audio_freq_scale;
 }
 

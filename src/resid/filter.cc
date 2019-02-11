@@ -523,7 +523,7 @@ void Filter::writeMODE_VOL(reg8 mode_vol)
 void Filter::set_w0()
 {
   int fcs = (int)fc * fc_scale;
-  if(fcs > 0xfff) fcs = 0xfff; // Clamp to 12 bits
+  //if(fcs > 0xfff) fcs = 0xfff; // Clamp to 12 bits
 
   model_filter_t& f = model_filter[sid_model];
   int Vw = Vw_bias + f.f0_dac[fcs];

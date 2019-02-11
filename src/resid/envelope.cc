@@ -88,7 +88,6 @@ reg16 EnvelopeGenerator::rate_counter_period[] = {
   31251   //   8 s*1.0MHz/256 = 31250.00
 };
 
-
 // For decay and release, the clock to the envelope counter is sequentially
 // divided by 1, 2, 4, 8, 16, 30, 1 to create a piece-wise linear approximation
 // of an exponential. The exponential counter period is loaded at the envelope

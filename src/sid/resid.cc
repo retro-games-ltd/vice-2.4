@@ -297,6 +297,11 @@ static void resid_state_write(sound_t *psid, sid_snapshot_state_t *sid_state)
     psid->sid->write_state((const reSID::SID::State)state);
 }
 
+static void resid_set_audio_frequency_scale(sound_t *psid, float sf)
+{
+    psid->sid->set_audio_frequency_scale( sf );
+}
+
 sid_engine_t resid_hooks =
 {
     resid_open,
@@ -309,7 +314,8 @@ sid_engine_t resid_hooks =
     resid_prevent_clk_overflow,
     resid_dump_state,
     resid_state_read,
-    resid_state_write
+    resid_state_write,
+    resid_set_audio_frequency_scale
 };
 
 } // extern "C"

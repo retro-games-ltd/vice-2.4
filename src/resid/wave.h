@@ -53,6 +53,8 @@ public:
   void writeCONTROL_REG(reg8);
   reg8 readOSC();
 
+  void set_audio_frequency_scale(float);
+
   // 12-bit waveform output.
   short output();
 
@@ -79,6 +81,8 @@ protected:
   reg24 freq;
   // PWout = (PWn/40.95)%
   reg12 pw;
+
+  float freq_scale;
 
   reg24 shift_register;
 
@@ -147,7 +151,7 @@ void WaveformGenerator::clock()
   }
   else {
     // Calculate new accumulator value;
-    reg24 accumulator_next = (accumulator + freq) & 0xffffff;
+    reg24 accumulator_next = (accumulator + (reg24)(freq*freq_scale)) & 0xffffff;
     reg24 accumulator_bits_set = ~accumulator & accumulator_next;
     accumulator = accumulator_next;
 
@@ -186,7 +190,7 @@ void WaveformGenerator::clock(cycle_count delta_t)
   }
   else {
     // Calculate new accumulator value;
-    reg24 delta_accumulator = delta_t*freq;
+    reg24 delta_accumulator = (reg24)((delta_t*freq)*freq_scale);
     reg24 accumulator_next = (accumulator + delta_accumulator) & 0xffffff;
     reg24 accumulator_bits_set = ~accumulator & accumulator_next;
     accumulator = accumulator_next;

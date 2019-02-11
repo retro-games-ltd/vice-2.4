@@ -46,6 +46,7 @@ public:
 			       double sample_freq, double pass_freq = -1,
 			       double filter_scale = 0.97);
   void adjust_sampling_frequency(double sample_freq);
+  void set_audio_frequency_scale(float);
 
   void clock();
   void clock(cycle_count delta_t);

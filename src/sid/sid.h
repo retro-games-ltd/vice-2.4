@@ -126,6 +126,7 @@ struct sid_engine_s {
                        struct sid_snapshot_state_s *sid_state);
     void (*state_write)(struct sound_s *psid,
                         struct sid_snapshot_state_s *sid_state);
+    void (*set_audio_frequency_scale)(struct sound_s *psid, float sf );
 };
 typedef struct sid_engine_s sid_engine_t;
 
@@ -150,5 +151,6 @@ extern void sid_sound_machine_enable(int enable);
 extern sid_engine_model_t **sid_get_engine_model_list(void);
 extern int sid_set_engine_model(int engine, int model);
 extern void sid_sound_chip_init(void);
+extern void sid_sound_machine_set_audio_frequency_scale(sound_t *psid, float sf);
 
 #endif

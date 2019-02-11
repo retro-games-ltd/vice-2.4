@@ -92,10 +92,19 @@ WaveformGenerator::WaveformGenerator()
 
   sync_source = this;
 
+  freq_scale = 1.0;
+
   sid_model = MOS6581;
   reset();
 }
 
+// ----------------------------------------------------------------------------
+// Set audio frequency scale adjustment
+// ----------------------------------------------------------------------------
+void WaveformGenerator::set_audio_frequency_scale(float sf)
+{
+  freq_scale = sf;
+}
 
 // ----------------------------------------------------------------------------
 // Set sync source.

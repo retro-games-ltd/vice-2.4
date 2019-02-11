@@ -624,6 +624,24 @@ void SID::adjust_sampling_frequency(double sample_freq)
 
 
 // ----------------------------------------------------------------------------
+// Adjust the audio frequency.
+//
+// When clocking the SID faster or slower there will be a noticable shift in
+// audio frequency (running a PAL emulation at 60Hz output for instance will
+// generate 735 samples a frame but will be frequency shifted up by 20% over
+// the norm).
+//
+// The scale value is expressed as a percentage.
+// ----------------------------------------------------------------------------
+void SID::set_audio_frequency_scale( float sf )
+{
+  for (int i = 0; i < 3; i++) {
+    voice[i].wave.set_audio_frequency_scale( sf );
+  }
+  filter.set_audio_frequency_scale( sf );
+}
+
+// ----------------------------------------------------------------------------
 // SID clocking - delta_t cycles.
 // ----------------------------------------------------------------------------
 void SID::clock(cycle_count delta_t)

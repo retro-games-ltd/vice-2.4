@@ -226,6 +226,8 @@ struct sound_s
     BYTE                 filterType;
     BYTE                 filterCurType;
     WORD                 filterValue;
+
+    float                audio_scale;
 };
 
 /* XXX: check these */
@@ -514,7 +516,7 @@ inline static void setup_voice(voice_t *pv)
     pv->pw = (pv->d[2] + (pv->d[3] & 0x0f) * 0x100) * 0x100100;
 #endif
     pv->sync = pv->d[4] & 0x02 ? 1 : 0;
-    pv->fs = pv->s->speed1 * (pv->d[0] + pv->d[1] * 0x100);
+    pv->fs = (pv->s->speed1 * (pv->d[0] + pv->d[1] * 0x100)) * pv->s->audio_scale;
 #ifdef WAVETABLES
     if (pv->d[4] & 0x08) {
         pv->f = pv->fs = 0;
@@ -898,6 +900,8 @@ static int fastsid_init(sound_t *psid, int speed, int cycles_per_sec)
     for (i = 0; i < 9; i++)
         sidreadclocks[i] = 13;
 
+    psid->audio_scale = 1.0;
+
     return 1;
 }
 
@@ -1025,6 +1029,11 @@ static void fastsid_state_write(sound_t *psid, sid_snapshot_state_t *sid_state)
 {
 }
 
+static void fastsid_set_audio_frequency_scale(sound_t *psid, float sf)
+{
+    psid->audio_scale = sf;
+}
+
 sid_engine_t fastsid_hooks =
 {
     fastsid_open,
@@ -1037,6 +1046,7 @@ sid_engine_t fastsid_hooks =
     fastsid_prevent_clk_overflow,
     fastsid_dump_state,
     fastsid_state_read,
-    fastsid_state_write
+    fastsid_state_write,
+    fastsid_set_audio_frequency_scale
 };
 

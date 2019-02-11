@@ -57,7 +57,7 @@
 #include "util.h"
 #include "vsync.h"
 
-
+static float audio_scale = 1.0;
 static log_t sound_log = LOG_ERR;
 
 /* ------------------------------------------------------------------------- */
@@ -114,6 +114,17 @@ static int sound_machine_init(sound_t *psid, int speed, int cycles_per_sec)
         }
     }
     return retval;
+}
+
+static void sound_machine_set_audio_frequency_scale( sound_t *psid, float sf )
+{
+    int i;
+
+    for (i = 0; i < (offset >> 5); i++) {
+        if (sound_calls[i]->set_audio_frequency_scale) {
+            sound_calls[i]->set_audio_frequency_scale( psid, sf );
+        }
+    }
 }
 
 static void sound_machine_close(sound_t *psid)
@@ -723,6 +734,7 @@ static int sid_init(void)
         if (!sound_machine_init(snddata.psid[c], speed, cycles_per_sec)) {
             return sound_error(translate_text(IDGS_CANNOT_INIT_SID_ENGINE));
         }
+        sound_machine_set_audio_frequency_scale( snddata.psid[c], audio_scale );
     }
 
     snddata.clkstep = SOUNDCLK_CONSTANT(cycles_per_sec) / sample_rate;
@@ -1001,12 +1013,8 @@ int sound_set_frame_ramp( int direction )
 
 void sound_clear()
 {
-//    int nr = snddata.bufptr - snddata.bufptr % snddata.fragsize;
-//    int j = snddata.bufsize - nr;
-//printf("Padding (clear) buffer with %d samples\n", j );
     snddata.lastsample[0] = 0;
     snddata.lastsample[1] = 0;
-    //fill_buffer(j, 0);
 
     int i;
     for (i = 0; i < SOUND_BUFSIZE * SOUND_CHANNELS_MAX; i++) {
@@ -1022,7 +1030,6 @@ static int sound_run_sound(void)
     int delta_t = 0;
     SWORD *bufferptr;
     static int overflow_warning_count = 0;
-//printf("Sound_run_sound\n");
 
     /* XXX: implement the exact ... */
     if (!playback_enabled || (suspend_time > 0 && disabletime)) {
@@ -1046,6 +1053,8 @@ static int sound_run_sound(void)
                                              snddata.sound_output_channels,
                                              snddata.sound_chip_channels,
                                              &delta_t);
+
+//printf("Claculated %d samples\n", nr );
 
         if (volume < 100) {
             for (i = 0; i < (nr * snddata.sound_output_channels); i++) {
@@ -1101,6 +1110,7 @@ static int sound_run_sound(void)
         frame_ramp = 0;
     }
 
+//if(nr) printf("Generated %d samples\n", nr );
     snddata.bufptr += nr;
     snddata.lastclk = maincpu_clk;
 
@@ -1230,10 +1240,9 @@ double sound_flush()
             j = snddata.bufsize - nr;
             /* Fill up sound hardware buffer. */
             if (j > 0) {
-//printf("Need to fill buffer with %d values\n", j );
-// Force fill value to 0 to avoid clicks when frame drops (When redquark pause is released)
-snddata.lastsample[0] = 0;
-snddata.lastsample[1] = 0;
+                // Force fill value to 0 to avoid clicks when frame drops (When redquark pause is released)
+                snddata.lastsample[0] = 0;
+                snddata.lastsample[1] = 0;
                 fill_buffer(j, 0);
             }
             snddata.prevfill = j;
@@ -1399,7 +1408,7 @@ void sound_resume(void)
 }
 
 /* set PAL/NTSC clock speed */
-void sound_set_machine_parameter(long clock_rate, long ticks_per_frame)
+void sound_set_machine_parameter(long clock_rate, long ticks_per_frame, float audio_freq_scale)
 {
     sid_state_changed = TRUE;
 
@@ -1407,6 +1416,7 @@ void sound_set_machine_parameter(long clock_rate, long ticks_per_frame)
     cycles_per_rfsh = ticks_per_frame;
     rfsh_per_sec    = (1.0 /
                       ((double)cycles_per_rfsh / (double)cycles_per_sec));
+    audio_scale = audio_freq_scale;
 }
 
 /* initialize sid at program start -time */

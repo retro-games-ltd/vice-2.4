@@ -352,6 +352,7 @@ public:
   void adjust_filter_bias(double dac_bias);
   void set_chip_model(chip_model model);
   void set_voice_mask(reg4 mask);
+  void set_audio_frequency_scale(float);
 
   void clock(int voice1, int voice2, int voice3);
   void clock(cycle_count delta_t, int voice1, int voice2, int voice3);
@@ -400,6 +401,9 @@ protected:
   // These are derived from filt, mode, and voice_mask.
   reg8 sum;
   reg8 mix;
+
+  // Cutoff frequency scale factor
+  float fc_scale; 
 
   // State of filter.
   int Vhp; // highpass

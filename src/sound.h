@@ -135,7 +135,7 @@ extern int sound_open(void);
 extern void sound_close(void);
 extern void sound_set_relative_speed(int value);
 extern void sound_set_warp_mode(int value);
-extern void sound_set_machine_parameter(long clock_rate, long ticks_per_frame);
+extern void sound_set_machine_parameter(long clock_rate, long ticks_per_frame, float scale);
 extern void sound_snapshot_prepare(void);
 extern void sound_snapshot_finish(void);
 
@@ -207,6 +207,7 @@ typedef struct sound_chip_s {
     int (*cycle_based)(void);
     int (*channels)(void);
     int chip_enabled;
+    void (*set_audio_frequency_scale)(sound_t *psid, float sf);
 } sound_chip_t;
 
 extern WORD sound_chip_register(sound_chip_t *chip);

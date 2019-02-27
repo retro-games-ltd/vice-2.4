@@ -45,7 +45,8 @@ static sound_chip_t sid_sound_chip = {
     sid_sound_machine_reset,
     sid_sound_machine_cycle_based,
     sid_sound_machine_channels,
-    1 /* chip enabled */
+    1, /* chip enabled */
+    sid_sound_machine_set_audio_frequency_scale
 };
 
 static WORD sid_sound_chip_offset = 0;

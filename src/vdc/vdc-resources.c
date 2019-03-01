@@ -133,6 +133,7 @@ int vdc_resources_init(void)
 
     vdc.video_chip_cap = &video_chip_cap;
 
+printf("vdc_resources_init\n");
     if (raster_resources_chip_init("VDC", &vdc.raster, &video_chip_cap) < 0)
         return -1;
 

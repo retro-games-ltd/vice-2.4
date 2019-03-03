@@ -61,6 +61,8 @@ public:
   reg8 readOSC();
   void writeACC_HI(reg8);
 
+  void set_audio_frequency_scale(float);
+
   RESID_INLINE unsigned int output();
 
 protected:
@@ -80,6 +82,8 @@ protected:
   reg16 freq;
   // PWout = (PWn/40.95)%
   reg12 pw;
+
+  float freq_scale;
 
   // The control register right-shifted 4 bits; used for output function
   // table lookup.

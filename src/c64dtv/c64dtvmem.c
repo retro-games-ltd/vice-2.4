@@ -636,7 +636,7 @@ void mem_get_screen_parameter(WORD *base, BYTE *rows, BYTE *columns, int *bank)
 
 /* end of c64dtvmem_main.c */
 
-static log_t c64dtvmem_log = LOG_ERR;
+static log_t c64dtvmem_log = 0; //LOG_ERR;
 
 /* I/O of the memory mapper ($D100/$D101) */
 BYTE c64dtvmem_memmapper[0x2];

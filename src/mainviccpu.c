@@ -44,6 +44,8 @@
 #include "types.h"
 
 
+int maincpu_running = 1;
+
 /* MACHINE_STUFF should define/undef
 
  - NEED_REG_PC
@@ -370,7 +372,7 @@ void maincpu_mainloop(void)
 
     machine_trigger_reset(MACHINE_RESET_MODE_SOFT);
 
-    while (1) {
+    while (maincpu_running) {
 
 #define CLK maincpu_clk
 #define RMW_FLAG maincpu_rmw_flag

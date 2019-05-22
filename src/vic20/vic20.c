@@ -111,6 +111,11 @@ int machine_class = VICE_MACHINE_VIC20;
 
 static void machine_vsync_hook(void);
 
+static long sound_pal_cycles_per_sec = 0;
+static long sound_pal_cycles_per_rfsh = 0;
+static long sound_ntsc_cycles_per_sec = 0;
+static long sound_ntsc_cycles_per_rfsh = 0;
+
 /* ------------------------------------------------------------------------- */
 
 static const trap_t vic20_serial_traps[] = {
@@ -430,7 +435,7 @@ int machine_specific_init(void)
 
     /* Initialize sound.  Notice that this does not really open the audio
        device yet.  */
-    sound_init(machine_timing.cycles_per_sec, machine_timing.cycles_per_rfsh);
+    sound_init(machine_timing.sound_cycles_per_sec, machine_timing.sound_cycles_per_rfsh);
 
     /* Initialize keyboard buffer.  */
     kbdbuf_init(631, 198, 10, (CLOCK)(machine_timing.cycles_per_rfsh
@@ -615,6 +620,12 @@ void machine_change_timing(int timeval)
         machine_timing.rfsh_per_sec = VIC20_PAL_RFSH_PER_SEC;
         machine_timing.cycles_per_line = VIC20_PAL_CYCLES_PER_LINE;
         machine_timing.screen_lines = VIC20_PAL_SCREEN_LINES;
+        //machine_timing.sound_cycles_per_sec  = 1107600; //sound_pal_cycles_per_sec;
+        //machine_timing.sound_cycles_per_rfsh = 22152; //sound_pal_cycles_per_rfsh;
+        machine_timing.sound_cycles_per_sec  = sound_pal_cycles_per_sec;
+        machine_timing.sound_cycles_per_rfsh = sound_pal_cycles_per_rfsh;
+        //machine_timing.sound_cycles_per_sec  = machine_timing.cycles_per_sec;
+        //machine_timing.sound_cycles_per_rfsh = machine_timing.cycles_per_rfsh;
         break;
       case MACHINE_SYNC_NTSC:
         machine_timing.cycles_per_sec = VIC20_NTSC_CYCLES_PER_SEC;
@@ -622,6 +633,8 @@ void machine_change_timing(int timeval)
         machine_timing.rfsh_per_sec = VIC20_NTSC_RFSH_PER_SEC;
         machine_timing.cycles_per_line = VIC20_NTSC_CYCLES_PER_LINE;
         machine_timing.screen_lines = VIC20_NTSC_SCREEN_LINES;
+        machine_timing.sound_cycles_per_sec  = sound_ntsc_cycles_per_sec;
+        machine_timing.sound_cycles_per_rfsh = sound_ntsc_cycles_per_rfsh;
         break;
       default:
         log_error(vic20_log, "Unknown machine timing.");
@@ -629,8 +642,8 @@ void machine_change_timing(int timeval)
 
     vsync_set_machine_parameter(machine_timing.rfsh_per_sec,
                                 machine_timing.cycles_per_sec);
-    sound_set_machine_parameter(machine_timing.cycles_per_sec,
-                                machine_timing.cycles_per_rfsh);
+    sound_set_machine_parameter(machine_timing.sound_cycles_per_sec,
+                                machine_timing.sound_cycles_per_rfsh);
     sid_set_machine_parameter(machine_timing.cycles_per_sec);
     debug_set_machine_parameter(machine_timing.cycles_per_line,
                                 machine_timing.screen_lines);
@@ -671,8 +684,8 @@ void machine_play_psid(int tune)
 
 int machine_screenshot(screenshot_t *screenshot, struct video_canvas_s *canvas)
 {
-    if (canvas != vic_get_canvas())
-        return -1;
+    //if (canvas != vic_get_canvas())
+    //    return -1;
 
     vic_screenshot(screenshot);
     return 0;
@@ -719,3 +732,19 @@ const char **csidmodel = NULL;
 void psid_init_driver(void) {}
 BYTE *mem_chargen_rom = NULL;
 #endif
+
+void machine_set_sound_cycles(int sync_mode, long cycles_per_second, long cycles_per_rfsh )
+{
+    switch( sync_mode ) {
+        case MACHINE_SYNC_NTSC:
+            sound_ntsc_cycles_per_sec = cycles_per_second;
+            sound_ntsc_cycles_per_rfsh = cycles_per_rfsh;
+            break;
+        case MACHINE_SYNC_PAL:
+            sound_pal_cycles_per_sec = cycles_per_second;
+            sound_pal_cycles_per_rfsh = cycles_per_rfsh;
+            break;
+        default:
+            break;
+    }
+}

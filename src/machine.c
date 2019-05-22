@@ -77,7 +77,6 @@ static int mem_initialized = 0;
 static int ignore_jam;
 int machine_keymap_index;
 
-
 unsigned int machine_jam(const char *format, ...)
 {
     char *str;

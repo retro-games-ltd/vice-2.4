@@ -60,6 +60,9 @@ struct machine_timing_s {
     long cycles_per_sec;
     double rfsh_per_sec;
     unsigned int screen_lines;
+    // Added for THEC64 Firmware
+    long sound_cycles_per_rfsh;
+    long sound_cycles_per_sec;
 };
 typedef struct machine_timing_s machine_timing_t;
 

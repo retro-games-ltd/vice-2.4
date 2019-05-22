@@ -786,6 +786,7 @@ int sound_open(void)
     int fragnr;
     double bufsize;
 
+printf("sound.c:sound_open clks_per_second = %ld, cycles_per_rfsh = %ld\n", cycles_per_sec, cycles_per_rfsh );
     if (suspend_time > 0 && disabletime) {
         return 1;
     }
@@ -1054,7 +1055,7 @@ static int sound_run_sound(void)
                                              snddata.sound_chip_channels,
                                              &delta_t);
 
-//printf("Claculated %d samples\n", nr );
+//printf("Calculated %d samples (asked for %d)\n", nr, SOUND_BUFSIZE - snddata.bufptr );
 
         if (volume < 100) {
             for (i = 0; i < (nr * snddata.sound_output_channels); i++) {
@@ -1159,7 +1160,6 @@ double sound_flush()
     char *state;
     static time_t prev;
     time_t now;
-//printf("Sound flush\n");
 
     if (!playback_enabled) {
         if (sdev_open) {
@@ -1416,6 +1416,7 @@ void sound_set_machine_parameter(long clock_rate, long ticks_per_frame )
     cycles_per_rfsh = ticks_per_frame;
     rfsh_per_sec    = (1.0 /
                       ((double)cycles_per_rfsh / (double)cycles_per_sec));
+printf("sound.c:sound_set_machine_parameter clks_per_second = %ld\n", clock_rate );
 }
 
 void sound_set_audio_scaling( float audio_freq_scale )
@@ -1434,6 +1435,7 @@ void sound_init(unsigned int clock_rate, unsigned int ticks_per_frame)
     cycles_per_sec = clock_rate;
     cycles_per_rfsh = ticks_per_frame;
     rfsh_per_sec = (1.0 / ((double)cycles_per_rfsh / (double)cycles_per_sec));
+printf("sound.c:sound_init clks_per_second = %ld\n", clock_rate );
 
     clk_guard_add_callback(maincpu_clk_guard, prevent_clk_overflow_callback,
                            NULL);

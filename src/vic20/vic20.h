@@ -68,5 +68,7 @@ typedef struct machine_context_s {
 
 extern machine_context_t machine_context;
 
+void machine_set_sound_cycles(int sync_mode, long cycles_per_second, long cycles_per_rfsh );
+
 #endif
 

@@ -684,8 +684,8 @@ void machine_play_psid(int tune)
 
 int machine_screenshot(screenshot_t *screenshot, struct video_canvas_s *canvas)
 {
-    //if (canvas != vic_get_canvas())
-    //    return -1;
+    if (canvas != vic_get_canvas())
+        return -1;
 
     vic_screenshot(screenshot);
     return 0;

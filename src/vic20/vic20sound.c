@@ -70,7 +70,8 @@ static sound_chip_t vic_sound_chip = {
     vic_sound_reset,
     vic_sound_machine_cycle_based,
     vic_sound_machine_channels,
-    1 /* chip enabled */
+    1, /* chip enabled */
+    // TODO Add sound_machine_set_audio_frequency_scale
 };
 
 static WORD vic_sound_chip_offset = 0;

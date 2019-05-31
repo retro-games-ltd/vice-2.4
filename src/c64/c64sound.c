@@ -113,6 +113,7 @@ static WORD sid_sound_chip_offset = 0;
 
 void sid_sound_chip_init(void)
 {
+printf("sid_sound_chip_init\n");
     sid_sound_chip_offset = sound_chip_register(&sid_sound_chip);
 }
 

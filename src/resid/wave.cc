@@ -87,12 +87,13 @@ WaveformGenerator::WaveformGenerator()
     // MOS 8580: 2R/R ~ 2.00, correct termination.
     build_dac_table(model_dac[1], 12, 2.00, true);
 
+    freq_scale = 1.0;
+
     class_init = true;
   }
 
   sync_source = this;
 
-  freq_scale = 1.0;
 
   sid_model = MOS6581;
   reset();

@@ -120,7 +120,7 @@ static void sound_machine_set_audio_frequency_scale( sound_t *psid, float sf )
 {
     int i;
 
-    if( pid == NULL ) return;
+    if( psid == NULL ) return;
 
     for (i = 0; i < (offset >> 5); i++) {
         if (sound_calls[i]->set_audio_frequency_scale) {

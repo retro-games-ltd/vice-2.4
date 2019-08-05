@@ -1031,7 +1031,7 @@ static void fastsid_state_write(sound_t *psid, sid_snapshot_state_t *sid_state)
 
 static void fastsid_set_audio_frequency_scale(sound_t *psid, float sf)
 {
-    psid->audio_scale = sf;
+    if( psid ) psid->audio_scale = sf;
 }
 
 sid_engine_t fastsid_hooks =

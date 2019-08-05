@@ -318,7 +318,7 @@ void sid_sound_machine_reset(sound_t *psid, CLOCK cpu_clk)
 
 void sid_sound_machine_set_audio_frequency_scale(sound_t *psid, float sf)
 {
-    sid_engine.set_audio_frequency_scale(psid, sf);
+    if( psid ) sid_engine.set_audio_frequency_scale(psid, sf);
 }
 
 int sid_sound_machine_calculate_samples(sound_t **psid, SWORD *pbuf, int nr, int soc, int scc, int *delta_t)

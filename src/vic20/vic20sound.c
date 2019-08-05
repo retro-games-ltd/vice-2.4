@@ -60,6 +60,10 @@ static int vic_sound_machine_channels(void)
 	return 1;
 }
 
+static void vic_set_audio_frequency_scale(sound_t *psid, float sf)
+{
+}
+
 static sound_chip_t vic_sound_chip = {
     NULL, /* no open */
     vic_sound_machine_init,
@@ -71,7 +75,7 @@ static sound_chip_t vic_sound_chip = {
     vic_sound_machine_cycle_based,
     vic_sound_machine_channels,
     1, /* chip enabled */
-    // TODO Add sound_machine_set_audio_frequency_scale
+    vic_set_audio_frequency_scale,
 };
 
 static WORD vic_sound_chip_offset = 0;

@@ -299,7 +299,7 @@ static void resid_state_write(sound_t *psid, sid_snapshot_state_t *sid_state)
 
 static void resid_set_audio_frequency_scale(sound_t *psid, float sf)
 {
-    psid->sid->set_audio_frequency_scale( sf );
+    if( psid ) psid->sid->set_audio_frequency_scale( sf );
 }
 
 sid_engine_t resid_hooks =

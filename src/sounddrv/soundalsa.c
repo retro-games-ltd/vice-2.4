@@ -184,6 +184,16 @@ static int alsa_bufferspace(void)
     return space;
 }
 
+int debug_alsa_get_space(void)
+{
+    return alsa_bufferspace();
+}
+int debug_alsa_get_delay(void)
+{
+    snd_pcm_sframes_t d;
+    return snd_pcm_delay(handle, &d);
+}
+
 static void alsa_close(void)
 {
     snd_pcm_close(handle);

@@ -1147,6 +1147,7 @@ static void prevent_clk_overflow_callback(CLOCK sub, void *data)
     }
 }
 
+static int bs = 0;
 /* flush all generated samples from buffer to sounddevice. adjust sid runspeed
    to match real running speed of program */
 #ifdef __MSDOS__
@@ -1362,6 +1363,7 @@ double sound_flush()
         /* Aim for utilization of bufsize - fragsize. */
         int remspace =
             snddata.playdev->bufferspace() - snddata.bufptr;
+bs = remspace;
         /* Return delay in seconds. */
         return (double)remspace/sample_rate;
     }
@@ -1369,6 +1371,7 @@ double sound_flush()
 
     return 0;
 }
+int debug_vice_get_audio_space(void) { return bs; }
 
 /* suspend sid (eg. before pause) */
 void sound_suspend(void)

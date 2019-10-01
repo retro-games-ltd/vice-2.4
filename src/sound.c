@@ -1364,6 +1364,7 @@ double sound_flush()
         int remspace =
             snddata.playdev->bufferspace() - snddata.bufptr;
 bs = remspace;
+//printf( "vice space = %d.  flushed %d samples\n", bs, nr );
         /* Return delay in seconds. */
         return (double)remspace/sample_rate;
     }

@@ -1078,6 +1078,13 @@ int autostart_tape(const char *file_name, const char *program_name,
                 do_seek = 0;
              program_number -= 1;
         }
+        // CDS - THEC64 - Repeat autostart of tape images causes VICE to get slower and slower
+        // to find the start of the program on tap. The unproven hunch is that it apears to search
+        // // through the entire tape and then start at the beginning again. Forcing a REWIND of
+        // the datasette here certainly makes repeat autoloading of tape images work correctly!
+        //
+        //
+        datasette_control(DATASETTE_CONTROL_REWIND);
         if (do_seek) {
             if (program_number > 0) {
                 /* program numbers in tape_seek_to_file() start at 0 */

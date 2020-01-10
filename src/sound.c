@@ -1385,6 +1385,8 @@ void sound_suspend(void)
         fill_buffer(snddata.fragsize, -1);
     }
     if (snddata.playdev->suspend && !snddata.issuspended) {
+
+        // FIXME The return here will preveng issuspended from being set!
         if (snddata.playdev->suspend())
             return;
     }

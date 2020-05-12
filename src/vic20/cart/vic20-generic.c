@@ -230,11 +230,12 @@ static int attach_image(int type, const char *filename)
     } else if (addr == 0x4000 || addr == 0x5000) {
         type2 = CARTRIDGE_VIC20_16KB_4000;
     }
+
     if (type2 == CARTRIDGE_VIC20_DETECT) {
         /* rewind to the beginning of the file (no load address) */
         fseek(fd, 0, SEEK_SET);
         /* raw 8KB binary images default to $a000-$bfff */
-        type = CARTRIDGE_VIC20_8KB_A000;
+        type2 = CARTRIDGE_VIC20_8KB_A000;
     }
     if (type == CARTRIDGE_VIC20_DETECT) {
         type = type2;

@@ -429,28 +429,24 @@ static CLOCK datasette_read_gap(int direction)
     return gap;
 }
 
-
-static void datasette_read_bit(CLOCK offset, void *data)
+static int datasette_read_bit_internal(CLOCK offset, long *gap_p, double *speed_p, CLOCK cpu_clk)
 {
     double speed_of_tape = DS_V_PLAY;
     int direction = 1;
     long gap;
 
-    alarm_unset(datasette_alarm);
-    datasette_alarm_pending = 0;
-
     if (current_image == NULL)
-        return;
+        return -1;
 
     /* check for delay of motor stop */
-    if (motor_stop_clk > 0 && maincpu_clk >= motor_stop_clk) {
+    if (motor_stop_clk > 0 && cpu_clk >= motor_stop_clk) {
         motor_stop_clk = 0;
         ui_display_tape_motor_status(0);
         datasette_motor = 0;
     }
 
     if (!datasette_motor)
-        return;
+        return -1;
 
     switch (current_image->mode) {
       case DATASETTE_CONTROL_START:
@@ -478,10 +474,10 @@ static void datasette_read_bit(CLOCK offset, void *data)
         break;
       case DATASETTE_CONTROL_RECORD:
       case DATASETTE_CONTROL_STOP:
-        return;
+        return -1;
       default:
         log_error(datasette_log, "Unknown datasette mode.");
-        return;
+        return -1;
     }
 
     if (direction + datasette_last_direction == 0) {
@@ -501,7 +497,7 @@ static void datasette_read_bit(CLOCK offset, void *data)
     }
     if (!gap) {
         datasette_control(DATASETTE_CONTROL_STOP);
-        return;
+        return -1;
     }
     if (gap > DATASETTE_MAX_GAP) {
         datasette_long_gap_pending = gap - DATASETTE_MAX_GAP;
@@ -514,8 +510,24 @@ static void datasette_read_bit(CLOCK offset, void *data)
         current_image->cycle_counter += gap / 8;
     else
         current_image->cycle_counter -= gap / 8;
-
     gap -= offset;
+
+    datasette_update_ui_counter();
+
+    *gap_p   = gap;
+    *speed_p = speed_of_tape;
+
+    return 0;
+}
+
+static void datasette_read_bit(CLOCK offset, void *data)
+{
+    alarm_unset(datasette_alarm);
+    datasette_alarm_pending = 0;
+
+    long gap;
+    double speed_of_tape;
+    if( datasette_read_bit_internal(offset, &gap, &speed_of_tape, maincpu_clk) < 0 ) return;
 
     if (gap > 0) {
         alarm_set(datasette_alarm, maincpu_clk +
@@ -527,9 +539,7 @@ static void datasette_read_bit(CLOCK offset, void *data)
         alarm_set(datasette_alarm, maincpu_clk);
         datasette_alarm_pending = 1;
     }
-    datasette_update_ui_counter();
 }
-
 
 static void clk_overflow_callback(CLOCK sub, void *data)
 {
@@ -714,6 +724,26 @@ static void datasette_control_internal(int command)
                 last_write_clk = (CLOCK)0;
             }
             break;
+          case DATASETTE_CONTROL_ADVANCE: // Only to be used from the UI to advance/rewind the tape while emulation is paused
+            if( current_image->mode == DATASETTE_CONTROL_FORWARD || current_image->mode == DATASETTE_CONTROL_REWIND ) {
+                long gap;
+                double speed;
+                int i;
+
+                int dm = datasette_motor;
+
+                if( !dm ) fseek(current_image->fd, current_image->current_file_seek_position + current_image->offset, SEEK_SET);
+                
+                datasette_motor = 1;
+
+                int cc = current_image->counter;
+                int limit = 10000;
+                while( cc == current_image->counter && limit-- && (datasette_read_bit_internal(0, &gap, &speed, 0) == 0 ) ) {}
+                datasette_motor = dm;
+            }
+            break;
+          case DATASETTE_CONTROL_GET_CMD: // No internal implementation
+            break;
         }
         ui_display_tape_control_status(current_image->mode);
         /* clear the tap-buffer */
@@ -721,14 +751,19 @@ static void datasette_control_internal(int command)
     }
 }
 
-void datasette_control(int command)
+int datasette_control(int command)
 {
+    if( command == DATASETTE_CONTROL_GET_CMD )
+        return current_image ? current_image->mode : -1;
+
     if (event_playback_active())
-        return;
+        return 0;
 
     datasette_event_record(command);
     if (!network_connected())
         datasette_control_internal(command);
+
+    return 0;
 }
 
 void datasette_set_motor(int flag)

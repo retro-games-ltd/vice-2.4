@@ -36,6 +36,8 @@
 #define DATASETTE_CONTROL_RECORD  4
 #define DATASETTE_CONTROL_RESET   5
 #define DATASETTE_CONTROL_RESET_COUNTER   6
+#define DATASETTE_CONTROL_ADVANCE 7
+#define DATASETTE_CONTROL_GET_CMD 8
 
 /* Counter is c=g*(sqrt(v*t/d*pi+r^2/d^2)-r/d)
    Some constants for the Datasette-Counter, maybe resourses in future */
@@ -54,7 +56,7 @@ struct tap_s;
 
 extern void datasette_init(void);
 extern void datasette_set_tape_image(struct tap_s *image);
-extern void datasette_control(int command);
+extern int  datasette_control(int command);
 extern void datasette_set_motor(int flag);
 extern void datasette_toggle_write_bit(int write_bit);
 extern void datasette_reset(void);

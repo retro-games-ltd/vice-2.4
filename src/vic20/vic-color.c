@@ -63,7 +63,7 @@
 static video_cbm_color_t vic_colors[VIC_NUM_COLORS]=
 {
     {   0.0f, ANGLE_ORN, -0, "Black"       },
-    { 256.0f, ANGLE_ORN, -0, "White"       },
+    { 241.0f, ANGLE_ORN, -0, "White"       },
     {  51.0f, ANGLE_RED,  1, "Red"         },
     { 157.0f, ANGLE_RED, -1, "Cyan"        },
     {  75.0f, ANGLE_GRN, -1, "Purple"      },

@@ -301,7 +301,7 @@ int tape_snapshot_read_module(snapshot_t *s)
     if (snap_type != tape_image_dev1->type) {
         /* attached image type is not correct */
         log_error(tape_snapshot_log,
-            "No tape image attached or type not correct.");
+            "No tape image attached or type not correct. %d != %d", snap_type, tape_image_dev1->type );
         snapshot_module_close(m);
         return -1;
     }
